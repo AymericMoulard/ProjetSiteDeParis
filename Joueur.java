@@ -12,6 +12,7 @@ public class Joueur {
 	private String nom;
 	private String prenom;
 	private String pseudo;
+   private long sommeEnJetons;
 
    
    public Joueur(String nom, String prenom, String pseudo) throws JoueurException{
@@ -22,6 +23,7 @@ public class Joueur {
       this.nom = nom; 
       this.prenom = prenom;
       this.pseudo = pseudo;
+      this.sommeEnJetons = 0;
    }
       
    
