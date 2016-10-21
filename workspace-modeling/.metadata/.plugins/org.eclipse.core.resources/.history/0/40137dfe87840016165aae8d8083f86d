@@ -1,0 +1,21 @@
+package siteParis;
+
+import java.util.Collection;
+
+
+public class Competiteur {
+
+	/**
+	 * @uml.property  name="competition"
+	 * @uml.associationEnd  inverse="competiteur:siteParis.Competition"
+	 * @uml.association  name="est disputée par"
+	 */
+	private Competition competition;
+	/** 
+	 * @uml.property name="joueur"
+	 * @uml.associationEnd multiplicity="(0 -1)" inverse="competiteur:siteParis.Joueur"
+	 * @uml.association name="mise sur"
+	 */
+	private Collection joueur;
+
+}

@@ -1,0 +1,326 @@
+what,kind,bundleId,bundleVersion,description,time
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474964444225
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474964457198
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474964457280
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474964460974
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474964465499
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474964471762
+opened,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1474964472903
+activated,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1474964473120
+activated,editor,com.soyatec.euml2.free,,"com.soyatec.uml.ClassDiagramEditor",1474964476319
+closed,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1474964476323
+activated,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1474964481962
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1474964525339
+activated,view,org.eclipse.ui.ide,3.7.0.v20110928-1505,"org.eclipse.ui.views.ProblemView",1474964562119
+activated,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1474964606781
+activated,editor,com.soyatec.euml2.free,,"com.soyatec.uml.ClassDiagramEditor",1474964613722
+activated,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1474964624268
+activated,editor,com.soyatec.euml2.free,,"com.soyatec.uml.ClassDiagramEditor",1474964660215
+started,bundle,org.eclipse.mylyn.ide.ui,3.6.0.v20110608-1400,"org.eclipse.mylyn.ide.ui",1474964668526
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474964668696
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474964698538
+activated,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1474964707365
+activated,editor,com.soyatec.euml2.free,,"com.soyatec.uml.ClassDiagramEditor",1474964757202
+closed,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1474964757204
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474964772803
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474964795198
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474964802076
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474964810831
+opened,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1474964814165
+activated,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1474964814362
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.delete",1474964836830
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1474964844698
+activated,editor,com.soyatec.euml2.free,,"com.soyatec.uml.ClassDiagramEditor",1474964846274
+closed,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1474964846277
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474964853109
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474964892347
+error,log,,,"Unhandled event loop exception",1474964914456
+error,log,,,"Unhandled event loop exception",1474964914470
+error,log,,,"Unhandled event loop exception",1474964914477
+error,log,,,"Unhandled event loop exception",1474964914495
+error,log,,,"Unhandled event loop exception",1474964914509
+error,log,,,"Unhandled event loop exception",1474964914533
+error,log,,,"Unhandled event loop exception",1474964914558
+error,log,,,"Unhandled event loop exception",1474964914573
+error,log,,,"Unhandled event loop exception",1474964917550
+error,log,,,"Unhandled event loop exception",1474964917565
+error,log,,,"Unhandled event loop exception",1474964917582
+error,log,,,"Unhandled event loop exception",1474964917590
+error,log,,,"Unhandled event loop exception",1474964917605
+error,log,,,"Unhandled event loop exception",1474964917613
+error,log,,,"Unhandled event loop exception",1474964917622
+error,log,,,"Unhandled event loop exception",1474964917630
+error,log,,,"Unhandled event loop exception",1474964917637
+error,log,,,"Unhandled event loop exception",1474964917653
+error,log,,,"Unhandled event loop exception",1474964917661
+error,log,,,"Unhandled event loop exception",1474964917670
+error,log,,,"Unhandled event loop exception",1474964917677
+error,log,,,"Unhandled event loop exception",1474964917687
+error,log,,,"Unhandled event loop exception",1474964917697
+error,log,,,"Unhandled event loop exception",1474964917708
+error,log,,,"Unhandled event loop exception",1474964917717
+error,log,,,"Unhandled event loop exception",1474964917765
+error,log,,,"Unhandled event loop exception",1474964917798
+error,log,,,"Unhandled event loop exception",1474964917814
+error,log,,,"Unhandled event loop exception",1474964917821
+error,log,,,"Unhandled event loop exception",1474964917830
+error,log,,,"Unhandled event loop exception",1474964917837
+error,log,,,"Unhandled event loop exception",1474964917855
+error,log,,,"Unhandled event loop exception",1474964917866
+error,log,,,"Unhandled event loop exception",1474964917876
+error,log,,,"Unhandled event loop exception",1474964917885
+error,log,,,"Unhandled event loop exception",1474964917895
+error,log,,,"Unhandled event loop exception",1474964917903
+error,log,,,"Unhandled event loop exception",1474964917914
+error,log,,,"Unhandled event loop exception",1474964917923
+error,log,,,"Unhandled event loop exception",1474964917934
+error,log,,,"Unhandled event loop exception",1474964917944
+error,log,,,"Unhandled event loop exception",1474964917957
+error,log,,,"Unhandled event loop exception",1474964917965
+error,log,,,"Unhandled event loop exception",1474964917973
+error,log,,,"Unhandled event loop exception",1474964917983
+error,log,,,"Unhandled event loop exception",1474964917997
+error,log,,,"Unhandled event loop exception",1474964918005
+error,log,,,"Unhandled event loop exception",1474964918021
+error,log,,,"Unhandled event loop exception",1474964918029
+error,log,,,"Unhandled event loop exception",1474964918037
+error,log,,,"Unhandled event loop exception",1474964918094
+error,log,,,"Unhandled event loop exception",1474964918349
+error,log,,,"Unhandled event loop exception",1474964918357
+error,log,,,"Unhandled event loop exception",1474964918373
+error,log,,,"Unhandled event loop exception",1474964918381
+error,log,,,"Unhandled event loop exception",1474964918389
+error,log,,,"Unhandled event loop exception",1474964918397
+error,log,,,"Unhandled event loop exception",1474964918405
+error,log,,,"Unhandled event loop exception",1474964918421
+error,log,,,"Unhandled event loop exception",1474964918429
+error,log,,,"Unhandled event loop exception",1474964918437
+error,log,,,"Unhandled event loop exception",1474964918445
+error,log,,,"Unhandled event loop exception",1474964918455
+error,log,,,"Unhandled event loop exception",1474964918465
+error,log,,,"Unhandled event loop exception",1474964918686
+error,log,,,"Unhandled event loop exception",1474964921322
+error,log,,,"Unhandled event loop exception",1474964921334
+error,log,,,"Unhandled event loop exception",1474964921341
+error,log,,,"Unhandled event loop exception",1474964921357
+error,log,,,"Unhandled event loop exception",1474964921365
+error,log,,,"Unhandled event loop exception",1474964921373
+error,log,,,"Unhandled event loop exception",1474964921382
+error,log,,,"Unhandled event loop exception",1474964921390
+error,log,,,"Unhandled event loop exception",1474964921406
+error,log,,,"Unhandled event loop exception",1474964921413
+error,log,,,"Unhandled event loop exception",1474964921421
+error,log,,,"Unhandled event loop exception",1474964921429
+error,log,,,"Unhandled event loop exception",1474964921439
+error,log,,,"Unhandled event loop exception",1474964921453
+error,log,,,"Unhandled event loop exception",1474964921461
+error,log,,,"Unhandled event loop exception",1474964921469
+error,log,,,"Unhandled event loop exception",1474964921477
+error,log,,,"Unhandled event loop exception",1474964921488
+error,log,,,"Unhandled event loop exception",1474964921498
+error,log,,,"Unhandled event loop exception",1474964921508
+error,log,,,"Unhandled event loop exception",1474964921534
+error,log,,,"Unhandled event loop exception",1474964921536
+error,log,,,"Unhandled event loop exception",1474964921542
+error,log,,,"Unhandled event loop exception",1474964921566
+error,log,,,"Unhandled event loop exception",1474964921581
+error,log,,,"Unhandled event loop exception",1474964921598
+error,log,,,"Unhandled event loop exception",1474964921613
+error,log,,,"Unhandled event loop exception",1474964921621
+error,log,,,"Unhandled event loop exception",1474964921629
+error,log,,,"Unhandled event loop exception",1474964921645
+error,log,,,"Unhandled event loop exception",1474964921662
+error,log,,,"Unhandled event loop exception",1474964921669
+error,log,,,"Unhandled event loop exception",1474964921678
+error,log,,,"Unhandled event loop exception",1474964921685
+error,log,,,"Unhandled event loop exception",1474964921701
+error,log,,,"Unhandled event loop exception",1474964921709
+error,log,,,"Unhandled event loop exception",1474964921717
+error,log,,,"Unhandled event loop exception",1474964921725
+error,log,,,"Unhandled event loop exception",1474964921734
+error,log,,,"Unhandled event loop exception",1474964921750
+error,log,,,"Unhandled event loop exception",1474964921757
+error,log,,,"Unhandled event loop exception",1474964921765
+error,log,,,"Unhandled event loop exception",1474964921773
+error,log,,,"Unhandled event loop exception",1474964921783
+error,log,,,"Unhandled event loop exception",1474964921793
+error,log,,,"Unhandled event loop exception",1474964921804
+error,log,,,"Unhandled event loop exception",1474964921814
+error,log,,,"Unhandled event loop exception",1474964921837
+error,log,,,"Unhandled event loop exception",1474964921965
+error,log,,,"Unhandled event loop exception",1474964921973
+error,log,,,"Unhandled event loop exception",1474964921989
+error,log,,,"Unhandled event loop exception",1474964922000
+error,log,,,"Unhandled event loop exception",1474964922010
+opened,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1474964924357
+activated,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1474964924550
+activated,editor,com.soyatec.euml2.free,,"com.soyatec.uml.ClassDiagramEditor",1474964959936
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474964964425
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474964981357
+activated,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1474964985401
+activated,editor,com.soyatec.euml2.free,,"com.soyatec.uml.ClassDiagramEditor",1474964994372
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474965002689
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474965009449
+activated,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1474965010422
+activated,view,org.eclipse.ui.ide,3.7.0.v20110928-1505,"org.eclipse.ui.views.ProblemView",1474965422033
+opened,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1474965422239
+activated,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1474965422311
+activated,view,org.eclipse.ui.ide,3.7.0.v20110928-1505,"org.eclipse.ui.views.ProblemView",1474965422350
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474965436854
+activated,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1474965437182
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474965437206
+started,bundle,org.eclipse.mylyn.java.tasks,3.6.0.v20110608-1400,"org.eclipse.mylyn.java.tasks",1474965447166
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474965453311
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474965453524
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.undo",1474965458482
+executed,command,,,"AUTOGEN:::org.eclipse.jdt.internal.ui.CompilationUnitEditor.ruler.actions/org.eclipse.jdt.internal.ui.javaeditor.JavaSelectRulerAction",1474965466650
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474965475176
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474965476192
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1474965485551
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474965691144
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474965718326
+activated,editor,com.soyatec.euml2.free,,"com.soyatec.uml.ClassDiagramEditor",1474965812575
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474965847835
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474965853819
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474965858875
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474965862848
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474965881728
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474965911706
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474965915019
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474965931267
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474965932054
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474965958099
+activated,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1474965964825
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1474965989420
+activated,editor,com.soyatec.euml2.free,,"com.soyatec.uml.ClassDiagramEditor",1474965990982
+activated,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1474966001979
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.delete",1474966045128
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1474966048102
+activated,editor,com.soyatec.euml2.free,,"com.soyatec.uml.ClassDiagramEditor",1474966050062
+activated,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1474966052754
+activated,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1474966058256
+activated,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1474966061480
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.delete",1474966093853
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1474966098408
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1474966153813
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1474966194536
+activated,editor,com.soyatec.euml2.free,,"com.soyatec.uml.ClassDiagramEditor",1474966197269
+activated,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1474966207429
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1474966248137
+activated,editor,com.soyatec.euml2.free,,"com.soyatec.uml.ClassDiagramEditor",1474966256708
+activated,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1474966264762
+activated,editor,com.soyatec.euml2.free,,"com.soyatec.uml.ClassDiagramEditor",1474966286013
+activated,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1474966289067
+activated,editor,com.soyatec.euml2.free,,"com.soyatec.uml.ClassDiagramEditor",1474966304981
+opened,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1474966306175
+activated,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1474966306367
+closed,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1474966318803
+activated,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1474966319723
+activated,editor,com.soyatec.euml2.free,,"com.soyatec.uml.ClassDiagramEditor",1474966325779
+activated,view,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.PackageExplorer",1474966329051
+activated,editor,com.soyatec.euml2.free,,"com.soyatec.uml.ClassDiagramEditor",1474966336771
+activated,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1474966337180
+activated,editor,com.soyatec.euml2.free,,"com.soyatec.uml.ClassDiagramEditor",1474966339430
+closed,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1474966339433
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474966354850
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474966358348
+activated,view,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.PackageExplorer",1474966375899
+activated,editor,com.soyatec.euml2.free,,"com.soyatec.uml.ClassDiagramEditor",1474966378900
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474966396788
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474966436469
+opened,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1474966438993
+activated,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1474966439203
+activated,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1474966464654
+activated,editor,com.soyatec.euml2.free,,"com.soyatec.uml.ClassDiagramEditor",1474966465409
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474966468444
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474966478978
+activated,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1474966481531
+activated,editor,com.soyatec.euml2.free,,"com.soyatec.uml.ClassDiagramEditor",1474966490387
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474966493797
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474966498967
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474966500724
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474966504751
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474966512403
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474966514288
+activated,view,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.PackageExplorer",1474966526458
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.refresh",1474966534269
+activated,editor,com.soyatec.euml2.free,,"com.soyatec.uml.ClassDiagramEditor",1474966535087
+no handler,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.refresh",1474966536180
+no handler,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.refresh",1474966536788
+no handler,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.refresh",1474966536996
+no handler,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.refresh",1474966537476
+no handler,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.refresh",1474966537667
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474966562152
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474966579112
+activated,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1474966584377
+activated,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1474966591655
+activated,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1474966592973
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474966601887
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474966602062
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474966612585
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474966612992
+activated,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1474966620295
+activated,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1474966628849
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.cut",1474966661204
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.paste",1474966663992
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1474966674148
+activated,editor,com.soyatec.euml2.free,,"com.soyatec.uml.ClassDiagramEditor",1474966681210
+activated,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1474966686219
+activated,editor,com.soyatec.euml2.free,,"com.soyatec.uml.ClassDiagramEditor",1474966695068
+error,log,,,"Unhandled event loop exception",1474966699951
+error,log,,,"Unhandled event loop exception",1474966700758
+error,log,,,"Unhandled event loop exception",1474966700934
+activated,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1474966702805
+activated,editor,com.soyatec.euml2.free,,"com.soyatec.uml.ClassDiagramEditor",1474966707573
+activated,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1474966712919
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.cut",1474966726261
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1474966730043
+activated,editor,com.soyatec.euml2.free,,"com.soyatec.uml.ClassDiagramEditor",1474966731437
+activated,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1474966744859
+activated,editor,com.soyatec.euml2.free,,"com.soyatec.uml.ClassDiagramEditor",1474966752065
+activated,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1474966753215
+activated,editor,com.soyatec.euml2.free,,"com.soyatec.uml.ClassDiagramEditor",1474966754820
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474966756860
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474966758072
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474966762598
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474966763653
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474966768948
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474966773947
+activated,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1474966789862
+activated,editor,com.soyatec.euml2.free,,"com.soyatec.uml.ClassDiagramEditor",1474966801644
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474966819906
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474966822884
+activated,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1474966859399
+activated,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1474966889110
+activated,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1474966905702
+activated,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1474966906579
+activated,editor,com.soyatec.euml2.free,,"com.soyatec.uml.ClassDiagramEditor",1474966912477
+activated,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1474966921048
+activated,editor,com.soyatec.euml2.free,,"com.soyatec.uml.ClassDiagramEditor",1474967023479
+activated,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1474967031783
+activated,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1474967052947
+activated,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1474967060058
+activated,editor,com.soyatec.euml2.free,,"com.soyatec.uml.ClassDiagramEditor",1474967071873
+activated,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1474967073691
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474967079356
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474967079492
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474967083515
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474967083679
+activated,editor,com.soyatec.euml2.free,,"com.soyatec.uml.ClassDiagramEditor",1474967086592
+activated,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1474967088619
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1474967094609
+activated,editor,com.soyatec.euml2.free,,"com.soyatec.uml.ClassDiagramEditor",1474967095730
+activated,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1474967100204
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474967108764
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1474967109359
+started,bundle,org.eclipse.mylyn.java.ui,3.6.0.v20110608-1400,"org.eclipse.mylyn.java.ui",1474967311503
+started,bundle,org.eclipse.pde.api.tools,1.0.301.v20111129-2053,"org.eclipse.pde.api.tools",1474967311582
+started,bundle,org.eclipse.pde.api.tools.ui,1.0.301.v20110803_r371,"org.eclipse.pde.api.tools.ui",1474967311585
+started,bundle,org.eclipse.mylyn.pde.ui,3.6.0.v20110608-1400,"org.eclipse.mylyn.pde.ui",1474967311586
+started,bundle,org.eclipse.jpt.jaxb.ui,1.1.2.v201201260000,"org.eclipse.jpt.jaxb.ui",1474967311613
+started,bundle,org.eclipse.jpt.jpa.ui,3.0.2.v201201243020,"org.eclipse.jpt.jpa.ui",1474967311638
+started,bundle,org.eclipse.jst.ws.jaxws.ui,1.0.100.v201104032053,"org.eclipse.jst.ws.jaxws.ui",1474967311692
+started,bundle,org.eclipse.jpt.jaxb.core,1.0.2.v201111103010,"org.eclipse.jpt.jaxb.core",1474967311850
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1474967362723
+activated,editor,com.soyatec.euml2.free,,"com.soyatec.uml.ClassDiagramEditor",1474967364008
+activated,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1474967367049

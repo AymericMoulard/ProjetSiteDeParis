@@ -1,0 +1,54 @@
+package siteParis;
+
+import java.util.Collection;
+import java.util.LinkedList;
+
+
+public class Competition {
+
+	/** 
+	 * @uml.property name="siteDeParisMetier"
+	 * @uml.associationEnd inverse="competition:siteParis.SiteDeParisMetier"
+	 * @uml.association name="possède"
+	 */
+	private SiteDeParisMetier siteDeParisMetier;
+	/** 
+	 * @uml.property name="competiteur"
+	 * @uml.associationEnd multiplicity="(0 -1)" ordering="true" inverse="competition:siteParis.Competiteur"
+	 * @uml.association name="est disputée par"
+	 */
+	private LinkedList competiteur;
+	/** 
+	 * @uml.property name="competiteur1"
+	 * @uml.associationEnd multiplicity="(0 -1)" inverse="competition1:siteParis.Competiteur"
+	 * @uml.association name="participe à"
+	 */
+	private Collection dateFrancaise;
+	/**
+	 * @uml.property  name="nomCompetition"
+	 */
+	private String nomCompetition;
+	/**
+	 * Getter of the property <tt>nomCompetition</tt>
+	 * @return  Returns the nomCompetition.
+	 * @uml.property  name="nomCompetition"
+	 */
+	public String getNomCompetition() {
+		return nomCompetition;
+	}
+	/**
+	 * Setter of the property <tt>nomCompetition</tt>
+	 * @param nomCompetition  The nomCompetition to set.
+	 * @uml.property  name="nomCompetition"
+	 */
+	public void setNomCompetition(String nomCompetition) {
+		this.nomCompetition = nomCompetition;
+	}
+	/**
+	 * @uml.property  name="dateFrancaise"
+	 * @uml.associationEnd  inverse="competition:siteParis.DateFrancaise"
+	 * @uml.association  name="possède"
+	 */
+	private DateFrancaise francaise;
+
+}

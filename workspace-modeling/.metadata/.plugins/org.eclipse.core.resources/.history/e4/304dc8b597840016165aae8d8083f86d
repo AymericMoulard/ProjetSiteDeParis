@@ -1,0 +1,68 @@
+package siteParis;
+
+
+import java.util.LinkedList;
+
+
+public class Competition {
+
+	
+	private LinkedList<Competiteur> listeCompetiteurs;
+	
+	private DateFrancaise dateCloture;
+	
+	private String nomCompetition;
+	
+	
+	
+	public Competition(String nomCompetition, DateFrancaise dateCloture) {
+		this.nomCompetition = nomCompetition;
+		this.dateCloture = dateCloture;
+		this.listeCompetiteurs = new LinkedList<Competiteur>();
+	}
+	
+	public String getNomCompetition() {
+		return nomCompetition;
+	}
+	
+
+	/**
+	 * Getter of the property <tt>listeCompetiteurs</tt>
+	 * @return  Returns the competiteurs.
+	 * @uml.property  name="listeCompetiteurs"
+	 */
+	public LinkedList getListeCompetiteurs() {
+		return competiteurs;
+	}
+
+	public LinkedList<Competiteur> getListeCompetiteurs() {
+		return listeCompetiteurs;
+	}
+
+
+	/**
+	 * @uml.property  name="listeCompetiteurs"
+	 * @uml.associationEnd  multiplicity="(0 -1)" ordering="true" inverse="competition:siteParis.Competiteur"
+	 * @uml.association  name="possède"
+	 */
+	private LinkedList competiteurs;
+
+
+
+	/**
+	 * Setter of the property <tt>listeCompetiteurs</tt>
+	 * @param listeCompetiteurs  The competiteurs to set.
+	 * @uml.property  name="listeCompetiteurs"
+	 */
+	public void setListeCompetiteurs(LinkedList listeCompetiteurs) {
+		competiteurs = listeCompetiteurs;
+	}
+	
+
+
+
+
+
+
+
+}

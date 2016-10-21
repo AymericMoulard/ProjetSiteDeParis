@@ -1,0 +1,49 @@
+package siteParis;
+
+import java.util.Collection;
+import java.util.LinkedList;
+
+
+public class Joueur {
+
+	/** 
+	 * @uml.property name="competiteur"
+	 * @uml.associationEnd multiplicity="(0 -1)" ordering="true" inverse="joueur:siteParis.Competiteur"
+	 * @uml.association name="mise sur"
+	 */
+	private LinkedList competiteur;
+
+		
+		/**
+		 */
+	public Joueur(String nom, String prenom, String pseudo){
+		
+		}
+
+
+		/**
+		 * @uml.property  name="nom"
+		 */
+		private String nom;
+
+
+		/**
+		 * Getter of the property <tt>nom</tt>
+		 * @return  Returns the nom.
+		 * @uml.property  name="nom"
+		 */
+		public String getNom() {
+			return nom;
+		}
+
+
+		/**
+		 * Setter of the property <tt>nom</tt>
+		 * @param nom  The nom to set.
+		 * @uml.property  name="nom"
+		 */
+		public void setNom(String nom) {
+			this.nom = nom;
+		}
+
+}

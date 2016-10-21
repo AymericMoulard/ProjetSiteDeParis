@@ -1,0 +1,31 @@
+package siteParis;
+
+
+public class Joueur {
+
+	/**
+	 * @uml.property  name="siteDeParisMetier"
+	 * @uml.associationEnd  inverse="joueur:siteParis.SiteDeParisMetier"
+	 * @uml.association  name="possede"
+	 */
+	private SiteDeParisMetier siteDeParisMetiers;
+
+	/**
+	 * Getter of the property <tt>siteDeParisMetier</tt>
+	 * @return  Returns the siteDeParisMetiers.
+	 * @uml.property  name="siteDeParisMetier"
+	 */
+	public SiteDeParisMetier getSiteDeParisMetier() {
+		return siteDeParisMetiers;
+	}
+
+	/**
+	 * Setter of the property <tt>siteDeParisMetier</tt>
+	 * @param siteDeParisMetier  The siteDeParisMetiers to set.
+	 * @uml.property  name="siteDeParisMetier"
+	 */
+	public void setSiteDeParisMetier(SiteDeParisMetier siteDeParisMetier) {
+		siteDeParisMetiers = siteDeParisMetier;
+	}
+
+}

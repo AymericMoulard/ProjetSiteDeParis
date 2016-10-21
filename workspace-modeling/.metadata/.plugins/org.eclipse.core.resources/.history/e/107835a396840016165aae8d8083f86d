@@ -1,0 +1,292 @@
+package siteParis;
+
+
+import java.util.LinkedList;
+
+
+public class Competition {
+
+	
+	private LinkedList<Competiteur> listeCompetiteurs;
+	
+	private DateFrancaise dateCloture;
+	
+	private String nomCompetition;
+	
+	
+	
+	public Competition(String nomCompetition, DateFrancaise dateCloture) {
+		this.nomCompetition = nomCompetition;
+		this.dateCloture = dateCloture;
+		this.listeCompetiteurs = new LinkedList<Competiteur>();
+	}
+	
+	public String getNomCompetition() {
+		return nomCompetition;
+	}
+	
+	/**
+	 * Getter of the property <tt>listeCompetiteurs</tt>
+	 * @return     Returns the cloture.
+	 * @uml.property     name="listeCompetiteurs"
+	 */
+	public LinkedList getListeCompetiteurs() {
+		return listeCompetiteurs;
+	}
+	
+
+
+
+
+	/**
+	 * Getter of the property <tt>listeCompetiteurs</tt>
+	 * @return     Returns the cloture.
+	 * @uml.property     name="listeCompetiteurs"
+	 */
+	public LinkedList getListeCompetiteurs() {
+		return cloture;
+	}
+
+	/**
+	 * Setter of the property <tt>listeCompetiteurs</tt>
+	 * @param listeCompetiteurs    The cloture to set.
+	 * @uml.property    name="listeCompetiteurs"
+	 */
+	public void setListeCompetiteurs(LinkedList listeCompetiteurs) {
+		cloture = listeCompetiteurs;
+	}
+
+	/**
+	 * Getter of the property <tt>listeCompetiteurs</tt>
+	 * @return     Returns the cloture.
+	 * @uml.property     name="listeCompetiteurs"
+	 */
+	public LinkedList getListeCompetiteurs() {
+		return cloture;
+	}
+
+	/**
+	 * Setter of the property <tt>listeCompetiteurs</tt>
+	 * @param listeCompetiteurs     The cloture to set.
+	 * @uml.property     name="listeCompetiteurs"
+	 */
+	public void setListeCompetiteurs(LinkedList listeCompetiteurs) {
+		cloture = listeCompetiteurs;
+	}
+
+	/**
+	 * Getter of the property <tt>listeCompetiteurs</tt>
+	 * @return     Returns the cloture.
+	 * @uml.property     name="listeCompetiteurs"
+	 */
+	public LinkedList getListeCompetiteurs() {
+		return cloture;
+	}
+
+	/**
+	 * Getter of the property <tt>listeCompetiteurs</tt>
+	 * @return     Returns the cloture.
+	 * @uml.property     name="listeCompetiteurs"
+	 */
+	public LinkedList getListeCompetiteurs() {
+		return cloture;
+	}
+
+	/**
+	 * Setter of the property <tt>listeCompetiteurs</tt>
+	 * @param listeCompetiteurs     The cloture to set.
+	 * @uml.property     name="listeCompetiteurs"
+	 */
+	public void setListeCompetiteurs(LinkedList listeCompetiteurs) {
+		cloture = listeCompetiteurs;
+	}
+
+	/**
+	 * Getter of the property <tt>listeCompetiteurs</tt>
+	 * @return     Returns the cloture.
+	 * @uml.property     name="listeCompetiteurs"
+	 */
+	public LinkedList getListeCompetiteurs() {
+		return cloture;
+	}
+
+	/**
+	 * Setter of the property <tt>listeCompetiteurs</tt>
+	 * @param listeCompetiteurs  The listeCompetiteurs to set.
+	 * @uml.property  name="listeCompetiteurs"
+	 */
+	public void setListeCompetiteurs(Competiteur listeCompetiteurs) {
+		this.listeCompetiteurs = listeCompetiteurs;
+	}
+
+	/**
+	 * Getter of the property <tt>listeCompetiteurs</tt>
+	 * @return     Returns the cloture.
+	 * @uml.property     name="listeCompetiteurs"
+	 */
+	public LinkedList getListeCompetiteurs() {
+		return cloture;
+	}
+
+	/**
+	 * Getter of the property <tt>listeCompetiteurs</tt>
+	 * @return     Returns the cloture.
+	 * @uml.property     name="listeCompetiteurs"
+	 */
+	public LinkedList getListeCompetiteurs() {
+		return cloture;
+	}
+
+	/**
+	 * Setter of the property <tt>listeCompetiteurs</tt>
+	 * @param listeCompetiteurs     The cloture to set.
+	 * @uml.property     name="listeCompetiteurs"
+	 */
+	public void setListeCompetiteurs(LinkedList listeCompetiteurs) {
+		cloture = listeCompetiteurs;
+	}
+
+	/**
+	 * Getter of the property <tt>listeCompetiteurs</tt>
+	 * @return     Returns the cloture.
+	 * @uml.property     name="listeCompetiteurs"
+	 */
+	public LinkedList getListeCompetiteurs() {
+		return cloture;
+	}
+
+	/**
+	 * Setter of the property <tt>listeCompetiteurs</tt>
+	 * @param listeCompetiteurs    The cloture to set.
+	 * @uml.property    name="listeCompetiteurs"
+	 */
+	public void setListeCompetiteurs(LinkedList listeCompetiteurs) {
+		cloture = listeCompetiteurs;
+	}
+
+	/**
+	 * Getter of the property <tt>listeCompetiteurs</tt>
+	 * @return    Returns the cloture.
+	 * @uml.property    name="listeCompetiteurs"
+	 */
+	public LinkedList getListeCompetiteurs() {
+		return cloture;
+	}
+
+	/**
+	 * Getter of the property <tt>listeCompetiteurs</tt>
+	 * @return    Returns the cloture.
+	 * @uml.property    name="listeCompetiteurs"
+	 */
+	public LinkedList getListeCompetiteurs() {
+		return cloture;
+	}
+
+	/** 
+	 * @uml.property name="listeCompetiteur"
+	 * @uml.associationEnd multiplicity="(0 -1)" ordering="true" inverse="competition:siteParis.Competiteur"
+	 * @uml.association name="possède"
+	 */
+	private LinkedList listeCompetiteur;
+
+
+
+	public LinkedList<Competiteur> getListeCompetiteurs() {
+		return listeCompetiteurs;
+	}
+
+	public LinkedList<Competiteur> getListeCompetiteurs() {
+		return listeCompetiteurs;
+	}
+
+	/**
+	 * Setter of the property <tt>listeCompetiteurs</tt>
+	 * @param listeCompetiteurs     The cloture to set.
+	 * @uml.property     name="listeCompetiteurs"
+	 */
+	public void setListeCompetiteurs(LinkedList listeCompetiteurs) {
+		cloture = listeCompetiteurs;
+	}
+
+	public LinkedList<Competiteur> getListeCompetiteurs() {
+		return listeCompetiteurs;
+	}
+
+	/**
+	 * Setter of the property <tt>listeCompetiteurs</tt>
+	 * @param listeCompetiteurs    The cloture to set.
+	 * @uml.property    name="listeCompetiteurs"
+	 */
+	public void setListeCompetiteurs(LinkedList listeCompetiteurs) {
+		cloture = listeCompetiteurs;
+	}
+
+	public LinkedList<Competiteur> getListeCompetiteurs() {
+		return cloture;
+	}
+
+	public LinkedList<Competiteur> getListeCompetiteurs() {
+		return cloture;
+	}
+
+	/**
+	 * Setter of the property <tt>listeCompetiteurs</tt>
+	 * @param listeCompetiteurs    The cloture to set.
+	 * @uml.property    name="listeCompetiteurs"
+	 */
+	public void setListeCompetiteurs(LinkedList listeCompetiteurs) {
+		cloture = listeCompetiteurs;
+	}
+
+	public LinkedList<Competiteur> getListeCompetiteurs() {
+		return listeCompetiteurs;
+	}
+
+	/**
+	 * Getter of the property <tt>listeCompetiteurs</tt>
+	 * @return    Returns the listeCompetiteurs.
+	 * @uml.property    name="listeCompetiteurs"
+	 */
+	public Competiteur getListeCompetiteurs() {
+		return listeCompetiteurs;
+	}
+
+	/**
+	 * Getter of the property <tt>listeCompetiteurs</tt>
+	 * @return    Returns the listeCompetiteurs.
+	 * @uml.property    name="listeCompetiteurs"
+	 */
+	public Competiteur getListeCompetiteurs() {
+		return listeCompetiteurs;
+	}
+
+	/**
+	 * Setter of the property <tt>listeCompetiteurs</tt>
+	 * @param listeCompetiteurs      The cloture to set.
+	 * @uml.property      name="listeCompetiteurs"
+	 */
+	public void setListeCompetiteurs(LinkedList listeCompetiteurs) {
+		cloture = listeCompetiteurs;
+	}
+
+	/**
+	 * Getter of the property <tt>listeCompetiteurs</tt>
+	 * @return    Returns the listeCompetiteurs.
+	 * @uml.property    name="listeCompetiteurs"
+	 */
+	public Competiteur getListeCompetiteurs() {
+		return listeCompetiteurs;
+	}
+
+	/**
+	 * Getter of the property <tt>listeCompetiteurs</tt>
+	 * @return     Returns the cloture.
+	 * @uml.property     name="listeCompetiteurs"
+	 */
+	public LinkedList getListeCompetiteurs() {
+		return cloture;
+	}
+		
+		
+
+}

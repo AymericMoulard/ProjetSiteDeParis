@@ -1,0 +1,38 @@
+package siteParis;
+
+
+import java.util.LinkedList;
+
+
+public class Competition {
+
+	
+	private LinkedList<Competiteur> listeCompetiteurs;
+	
+	private DateFrancaise dateCloture;
+	
+	private String nomCompetition;
+	
+	
+	
+	public Competition(String nomCompetition, DateFrancaise dateCloture) {
+		this.nomCompetition = nomCompetition;
+		this.dateCloture = dateCloture;
+		this.listeCompetiteurs = new LinkedList<Competiteur>();
+	}
+	
+	public String getNomCompetition() {
+		return nomCompetition;
+	}
+	
+	public LinkedList<Competiteur> getListeCompetiteurs() {
+		return listeCompetiteurs;
+	}
+	
+	public void setListeCompetiteurs(LinkedList<Competiteur> listeCompetiteurs) {
+		this.listeCompetiteurs = listeCompetiteurs;
+	}
+		
+		
+
+}
