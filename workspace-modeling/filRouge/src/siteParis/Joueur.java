@@ -99,6 +99,10 @@ public class Joueur {
    
    public void debiterJoueur(long sommeEnJetons) {
       this.sommeEnJetons -= sommeEnJetons;
-   }   
+   }
+   
+   public long getSommeEnJetons() {
+      return this.sommeEnJetons;
+   }
 
 }

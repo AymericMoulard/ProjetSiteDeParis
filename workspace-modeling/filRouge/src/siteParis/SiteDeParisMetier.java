@@ -276,6 +276,15 @@ public class SiteDeParisMetier {
       
       validitePasswordGestionnaire(passwordGestionnaire);
       veracitePasswordGestionnaire(passwordGestionnaire);
+      
+      validiteJoueur(nom, prenom, pseudo);
+      existanceJoueur(nom, prenom, pseudo);
+      
+      // Verification que la somme à créditer est correcte
+      if (sommeEnJetons < 0) {throw new MetierException();}
+      getJoueur(nom, prenom, pseudo).crediterJoueur(sommeEnJetons);
+      
+      
    }
 
 
@@ -420,8 +429,32 @@ public class SiteDeParisMetier {
       if ( !this.passwordGestionnaire.equals(passwordGestionnaire) ) throw new MetierException();
    }
    
-
-
+   protected void validiteJoueur(String nom, String prenom, String pseudo) throws JoueurException {
+      if (nom == null || prenom == null || pseudo == null){ throw new JoueurException(); }
+      if (!nom.matches("[A-Za-z-]{1,}") || !prenom.matches("[A-Za-z-]{1,}") || !pseudo.matches("[0-9A-Za-z]{4,}")){ throw new JoueurException();}
+   }
+   
+   protected void existanceJoueur(String nom, String prenom, String pseudo) throws JoueurInexistantException {
+      boolean joueurInexistant = true;
+      for(Joueur j:joueurs){
+         if (j.getNom().equals(nom) || j.getPrenom().equals(prenom) ||j.getPseudo().equals(pseudo)){
+            joueurInexistant = false;
+         }
+      }
+      if (joueurInexistant) {throw new JoueurInexistantException(); }
+   }
+   
+   protected Joueur getJoueur(String nom, String prenom, String pseudo) throws JoueurInexistantException {
+      boolean joueurInexistant = true;
+      for(Joueur j:joueurs){
+         if (j.getNom().equals(nom) || j.getPrenom().equals(prenom) ||j.getPseudo().equals(pseudo)){
+            joueurInexistant = false;
+            return j;
+         }
+      }
+      if (joueurInexistant) {throw new JoueurInexistantException(); }
+      return null;
+   }
 }
 
 
