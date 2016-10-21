@@ -93,11 +93,11 @@ public class Joueur {
 		this.pseudo = pseudo;
 	}
    
-   public void crediterJoueur(long sommeEnJetons) {
+   protected void crediterJoueur(long sommeEnJetons) {
       this.sommeEnJetons += sommeEnJetons;
    }
    
-   public void debiterJoueur(long sommeEnJetons) {
+   protected void debiterJoueur(long sommeEnJetons) {
       this.sommeEnJetons -= sommeEnJetons;
    }
    

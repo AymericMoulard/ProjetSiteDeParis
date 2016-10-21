@@ -677,50 +677,214 @@ public class TestMetier {
 			catch (Exception e) { 
 				System.out.println("mal crediter un joueur (somme n�gative) n'a pas levé l'exception MetierException mais " + e.getClass().getName());
 			}
+         
+         //Cr�dit correct des joueurs
          try {
             Joueur BernardProu = siteDeParisMetier.getJoueur("Prou", "Bernard", "nanard");
-            System.out.println("Le compte de Bernard est � " + BernardProu.getSommeEnJetons());
+            System.out.println("Le compte de Bernard est de " + BernardProu.getSommeEnJetons());
 				System.out.println("On credite Bernard de " + 12);
 				siteDeParisMetier.crediterJoueur("Prou", "Bernard", "nanard", 12, "ilesCaimans");
-            System.out.println("Le compte de Bernard est � " + BernardProu.getSommeEnJetons());
+            System.out.println("Le compte de Bernard est de " + BernardProu.getSommeEnJetons());
+            System.out.println("Test 5.16 : ça marche");
 			}
 			catch (Exception e) { 
-				System.out.println("mal crediter un joueur a lev� " + e.getClass().getName());
+				System.out.println("bien crediter un joueur a lev� " + e.getClass().getName());
 			}
-/*			try {
-				siteDeParisMetier.desinscrireJoueur(new String("lolita"), new String("avfrqwxx"), new String("tryui"), new String("ilesCaimans"));
-				System.out.println("désinscrire un joueur inexistant n'a pas levé l'exception JoueurInexistantException");
-			}
-			catch (JoueurInexistantException e) { System.out.println("Test 3.15: ça marche");}
-			catch (Exception e) { 
-				System.out.println("désinscrire un joueur inexistant n'a pas levé l'exception JoueurInexistantException mais " + e.getClass().getName());
-			}
-
-			try {
-				siteDeParisMetier.desinscrireJoueur(new String("Prou"), new String("Bernard"), new String("nanard"), "ilesVierges");
-				System.out.println("désinscrire un joueur avec un  password gestionnaire incorrect n'a pas levé l'exception MetierException");
-			}
-			catch (MetierException e) {System.out.println("Test 3.16: ça marche"); }
-			catch (Exception e) { 
-				System.out.println("désinscrire un joueur avec un  password gestionnaire incorrect n'a pas levé l'exception MetierException mais " + e.getClass().getName());
-			}
-
-
-			// désinscription correcte d'un joueur 
-			siteDeParisMetier.desinscrireJoueur(new String("Prou"), new String("Pascal"), new String("pascal"), new String("ilesCaimans"));
-
-			// désinscription incorrecte d'un joueur déja désinscrit
-			
-			try {
-				siteDeParisMetier.desinscrireJoueur(new String("Prou"), new String("Pascal"), new String("pascal"), new String("ilesCaimans"));
-				System.out.println("désinscrire un joueur déjà retiré n'a pas levé l'exception JoueurInexistantException");
-			}
-			catch (JoueurInexistantException e) { System.out.println("Test 3.17: ça marche");}
-			catch (Exception e) { 
-				System.out.println("désinscrire un joueur déjà retiré n'a pas levé l'exception JoueurInexistantException mais " + e.getClass().getName());
-			}
-*/
+      }
+      catch (Exception e) {
+			System.out.println("\n Exception imprévue : " + e);
+			e.printStackTrace();
 		}
+
+			// d�bit de joueurs incorrects
+      
+      try {
+
+			// construction correcte d'un site
+
+			SiteDeParisMetier siteDeParisMetier = new SiteDeParisMetier(new String("ilesCaimans"));
+
+			// inscription correcte de joueurs 
+
+			String passwdBernard = siteDeParisMetier.inscrireJoueur(new String("Prou"), new String("Bernard"), new String("nanard"), new String("ilesCaimans"));			
+			String passwdFrancoise = siteDeParisMetier.inscrireJoueur(new String("Prou"), new String("Francoise"), new String("fanfan"), new String("ilesCaimans"));			
+			String passwdPascal = siteDeParisMetier.inscrireJoueur(new String("Prou"), new String("Pascal"), new String("pascal"), new String("ilesCaimans"));
+			String passwdMorgane = siteDeParisMetier.inscrireJoueur(new String("Prou"), new String("Morgane"), new String("momo"), new String("ilesCaimans"));
+			String passwdAureliane = siteDeParisMetier.inscrireJoueur(new String("Prou"), new String("Aureliane"), new String("aure"), new String("ilesCaimans"));
+			String passwdSylvain = siteDeParisMetier.inscrireJoueur(new String("Nadou"), new String("Sylvain"), new String("zinzin"), new String("ilesCaimans"));
+         
+         // on cr�dite les joueurs de 1001 jetons
+         siteDeParisMetier.crediterJoueur("Prou", "Bernard", "nanard", 1001, "ilesCaimans");
+         siteDeParisMetier.crediterJoueur("Prou", "Francoise", "fanfan", 1001, "ilesCaimans");
+         siteDeParisMetier.crediterJoueur("Prou", "Pascal", "pascal", 1001, "ilesCaimans");
+         siteDeParisMetier.crediterJoueur("Prou", "Morgane", "momo", 1001, "ilesCaimans");
+         siteDeParisMetier.crediterJoueur("Prou", "Aureliane", "aure", 1001, "ilesCaimans");
+         siteDeParisMetier.crediterJoueur("Nadou", "Sylvain", "zinzin", 1001, "ilesCaimans");
+         
+         //D�but des tests
+               
+			try {
+				siteDeParisMetier.debiterJoueur("Maradona", null, "world1Champ", 12, new String("ilesCaimans"));
+				System.out.println("debiter un joueur avec un prenom invalide (non instancié) n'a pas levé l'exception JoueurException");
+			}
+			catch (JoueurException e) {System.out.println("Test 5.17: ça marche"); }
+			catch (Exception e) { 
+				System.out.println("debiter un joueur avec un prenom invalide (non instancié)  n'a pas levé l'exception JoueurException mais " + e.getClass().getName());
+			}
+
+			try {
+				siteDeParisMetier.debiterJoueur(null, "Diego", "world2Champ", 12, new String("ilesCaimans"));
+				System.out.println("debiter un joueur avec un nom invalide (non instancié) n'a pas levé l'exception JoueurException");
+			}
+			catch (JoueurException e) { System.out.println("Test 5.18: ça marche");}
+			catch (Exception e) { 
+				System.out.println("debiter un joueur avec un nom invalide (non instancié)  n'a pas levé l'exception JoueurException mais " + e.getClass().getName());
+			}
+
+			try {
+				siteDeParisMetier.debiterJoueur("Maradonaa", "Diegoa", null, 12, new String("ilesCaimans"));
+				System.out.println("debiter un joueur avec un pseudo invalide (non instancié) n'a pas levé l'exception JoueurException");
+			}
+			catch (JoueurException e) { System.out.println("Test 5.19: ça marche");}
+			catch (Exception e) { 
+				System.out.println("debiter un joueur avec un pseudo invalide (non instancié)  n'a pas levé l'exception JoueurException mais " + e.getClass().getName());
+			}
+
+			try {
+				siteDeParisMetier.debiterJoueur("Maradonab", "Diegob", "world3Champ",12, null);
+				System.out.println("debiter un joueur avec un password gestionnaire  invalide (non instancié) n'a pas levé l'exception MetierException");
+			}
+			catch (MetierException e) { System.out.println("Test 5.20: ça marche");}
+			catch (Exception e) { 
+				System.out.println("debiter un joueur avec un password gestionnaire  invalide (non instancié) n'a pas levé l'exception MetierException mais " + e.getClass().getName());
+			}
+			try {
+				siteDeParisMetier.debiterJoueur(new String("Duran"), new String(" "), "world4Champ", 12, new String("ilesCaimans"));
+				System.out.println("debiter un joueur avec un prénom invalide (un seul caractère : espace) n'a pas levé l'exception JoueurException");
+			}
+			catch (JoueurException e) { System.out.println("Test 5.21: ça marche");}
+			catch (Exception e) { 
+				System.out.println("debiter un joueur avec un prénom invalide (un seul caractère : espace)  n'a pas levé l'exception JoueurException mais " + e.getClass().getName());
+			}
+
+			try {
+				siteDeParisMetier.debiterJoueur("Dur an", "Carlos", "world5Champ", 12, new String("ilesCaimans"));
+				System.out.println("debiter un joueur avec un nom invalide (Dur an) n'a pas levé l'exception JoueurException");
+			}
+			catch (JoueurException e) { System.out.println("Test 5.22: ça marche");}
+			catch (Exception e) { 
+				System.out.println("debiter un joueur avec un nom invalide (Dur an)  n'a pas levé l'exception JoueurException mais " + e.getClass().getName());
+			}
+
+			try {
+				siteDeParisMetier.debiterJoueur("D'Espagne", "Philippe", "leRoi", 12, new String("ilesCaimans"));
+				System.out.println("debiter un joueur avec un nom invalide (un caractère ') n'a pas levé l'exception JoueurException");
+			}
+			catch (JoueurException e) { System.out.println("Test 3.23: ça marche");}
+			catch (Exception e) { 
+				System.out.println("debiter un joueur avec un nom invalide (un caractère ')  n'a pas levé l'exception JoueurException mais " + e.getClass().getName());
+			}
+
+			try {
+				siteDeParisMetier.debiterJoueur(new String("Nobel"), new String("Alfred"), new String("tnt"), 12, new String("ilesCaimans"));
+				System.out.println("debiter un joueur avec un pseudo invalide (moins de 4 caractères) n'a pas levé l'exception JoueurException");
+			}
+			catch (JoueurException e) { System.out.println("Test 5.24: ça marche");}
+			catch (Exception e) { 
+				System.out.println("debiter un joueur avec un pseudo invalide (moins de 4 caractères)  n'a pas levé l'exception JoueurException mais " + e.getClass().getName());
+			}
+
+			try {
+				siteDeParisMetier.debiterJoueur("Nobela", "Alfreda", "tnt.43", 12, new String("ilesCaimans"));
+				System.out.println("debiter un joueur avec un pseudo invalide (un caractère .) n'a pas levé l'exception JoueurException");
+			}
+			catch (JoueurException e) { System.out.println("Test 5.25: ça marche");}
+			catch (Exception e) { 
+				System.out.println("debiter un joueur avec un pseudo invalide (un caractère .)  n'a pas levé l'exception JoueurException mais " + e.getClass().getName());
+			}
+
+			try {
+				siteDeParisMetier.debiterJoueur("Durana", "Robertoa", "worldChampa", 12, "abef");
+				System.out.println("debiter un joueur avec un password gestionnaire  invalide (moins de 8 caractères) n'a pas levé l'exception MetierException");
+			}
+			catch (MetierException e) { System.out.println("Test 5.26: ça marche");}
+			catch (Exception e) { 
+				System.out.println("debiter un joueur avec un password gestionnaire  invalide (moins de 8 caractères) n'a pas levé l'exception MetierException mais " + e.getClass().getName());
+			}
+
+			try {
+				siteDeParisMetier.debiterJoueur("Duranb", "Robertob", "worldChampb", 12, "onSaitJamais");
+				System.out.println("debiter un joueur avec un password gestionnaire  incorrect n'a pas levé l'exception MetierException");
+			}
+			catch (MetierException e) { System.out.println("Test 5.27: ça marche");}
+			catch (Exception e) { 
+				System.out.println("debiter un joueur avec un password gestionnaire  incorrect n'a pas levé l'exception MetierException mais " + e.getClass().getName());
+			}
+
+			try {
+				siteDeParisMetier.debiterJoueur(new String("Duranb"), new String("Robertob"), new String("Machete"), 12, new String("ilesCaimans"));
+				System.out.println("debiter un joueur inexistant (mauvais pseudo) n'a pas levé l'exception JoueurInexistantException");
+			}
+			catch (JoueurInexistantException e) { System.out.println("Test 5.28: ça marche");}
+			catch (Exception e) { 
+				System.out.println("debiter un joueur inexistant (mauvais pseudo) n'a pas levé l'exception JoueurInexistantException mais " + e.getClass().getName());
+			}
+
+
+			try {
+				siteDeParisMetier.debiterJoueur(new String("Duranb"), new String("RobertobMachete"), new String("worldChampb"), 12, new String("ilesCaimans"));
+				System.out.println("debiter un joueur inexistant (mauvais prenom) n'a pas levé l'exception JoueurInexistantException");
+			}
+			catch (JoueurInexistantException e) { System.out.println("Test 5.29: ça marche");}
+			catch (Exception e) { 
+				System.out.println("debiter un joueur inexistant (mauvais prenom) n'a pas levé l'exception JoueurInexistantException mais " + e.getClass().getName());
+			}
+
+			try {
+				siteDeParisMetier.debiterJoueur(new String("DuranbMachete"), new String("Robertob"), new String("worldChampb"), 12, new String("ilesCaimans"));
+				System.out.println("crediter un joueur inexistant (mauvais nom) n'a pas levé l'exception JoueurInexistantException");
+			}
+			catch (JoueurInexistantException e) { System.out.println("Test 5.30: ça marche");}
+			catch (Exception e) { 
+				System.out.println("debiter un joueur inexistant (mauvais nom) n'a pas levé l'exception JoueurInexistantException mais " + e.getClass().getName());
+			}
+
+
+
+
+			// Debit incorrect des joueurs 
+         
+			try {
+				siteDeParisMetier.debiterJoueur(new String("Prou"), new String("Bernard"), new String("nanard"), -12, new String("ilesCaimans"));
+				System.out.println("mal debiter un joueur (somme n�gative) n'a pas levé l'exception MetierException");
+			}
+			catch (MetierException e) { System.out.println("Test 5.31: ça marche");}
+			catch (Exception e) { 
+				System.out.println("mal debiter un joueur (somme n�gative) n'a pas levé l'exception MetierException mais " + e.getClass().getName());
+			}
+         try {
+				siteDeParisMetier.debiterJoueur(new String("Prou"), new String("Bernard"), new String("nanard"), 12000, new String("ilesCaimans"));
+				System.out.println("mal debiter un joueur (debit superieur au solde) n'a pas levé l'exception MetierException");
+			}
+			catch (JoueurException e) { System.out.println("Test 5.32: ça marche");}
+			catch (Exception e) { 
+				System.out.println("mal debiter un joueur (debit superieur au solde) n'a pas levé l'exception JoueurException mais " + e.getClass().getName());
+			}
+         
+         //D�bit correct des joueurs
+         try {
+            Joueur FrancoiseProu = siteDeParisMetier.getJoueur("Prou", "Francoise", "fanfan");
+            System.out.println("Le compte de Francoise est de " + FrancoiseProu.getSommeEnJetons());
+				System.out.println("On debite Francoise de " + 12);
+				siteDeParisMetier.debiterJoueur("Prou", "Francoise", "fanfan", 12, "ilesCaimans");
+            System.out.println("Le compte de Francoise est de " + FrancoiseProu.getSommeEnJetons());
+            System.out.println("Test 5.33 : ça marche");
+			}
+			catch (Exception e) { 
+				System.out.println("bien debiter un joueur a lev� " + e.getClass().getName());
+			}
+         
+		}      
 		catch (Exception e) {
 			System.out.println("\n Exception imprévue : " + e);
 			e.printStackTrace();
