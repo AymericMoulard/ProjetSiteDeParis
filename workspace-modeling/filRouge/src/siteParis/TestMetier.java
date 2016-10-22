@@ -595,7 +595,7 @@ public class TestMetier {
 				siteDeParisMetier.crediterJoueur("D'Espagne", "Philippe", "leRoi", 12, new String("ilesCaimans"));
 				System.out.println("crediter un joueur avec un nom invalide (un caractère ') n'a pas levé l'exception JoueurException");
 			}
-			catch (JoueurException e) { System.out.println("Test 3.7: ça marche");}
+			catch (JoueurException e) { System.out.println("Test 5.7: ça marche");}
 			catch (Exception e) { 
 				System.out.println("crediter un joueur avec un nom invalide (un caractère ')  n'a pas levé l'exception JoueurException mais " + e.getClass().getName());
 			}
@@ -780,7 +780,7 @@ public class TestMetier {
 				siteDeParisMetier.debiterJoueur("D'Espagne", "Philippe", "leRoi", 12, new String("ilesCaimans"));
 				System.out.println("debiter un joueur avec un nom invalide (un caractère ') n'a pas levé l'exception JoueurException");
 			}
-			catch (JoueurException e) { System.out.println("Test 3.23: ça marche");}
+			catch (JoueurException e) { System.out.println("Test 5.23: ça marche");}
 			catch (Exception e) { 
 				System.out.println("debiter un joueur avec un nom invalide (un caractère ')  n'a pas levé l'exception JoueurException mais " + e.getClass().getName());
 			}
@@ -1286,7 +1286,7 @@ public class TestMetier {
 				siteDeParisMetier.consulterCompetiteurs(null);
 				System.out.println("consulterCompetiteurs avec une competition invalide (non instancié) n'a pas levé l'exception CompetitionException ");
 			}
-			catch (CompetitionException e) { }	
+			catch (CompetitionException e) {System.out.println("Ok"); }	
 			catch (Exception e) { 
 				System.out.println("consulterCompetiteurs avec une competition invalide (non instancié) n'a pas levé l'exception CompetitionException mais " + e.getClass().getName());
 			}
@@ -1295,7 +1295,7 @@ public class TestMetier {
 				siteDeParisMetier.consulterCompetiteurs("i2");
 				System.out.println("consulterCompetiteurs avec une competition invalide (moins de 4 caractères) n'a pas levé l'exception CompetitionException ");
 			}
-			catch (CompetitionException e) { }			
+			catch (CompetitionException e) {System.out.println("Ok"); }			
 			catch (Exception e) { 
 				System.out.println("consulterCompetiteurs avec une competition invalide (moins de 4 caractères) n'a pas levé l'exception CompetitionException mais " + e.getClass().getName());
 			}
@@ -1304,7 +1304,7 @@ public class TestMetier {
 				siteDeParisMetier.consulterCompetiteurs("inconnu");
 				System.out.println("consulterCompetiteurs avec une competition inexistante n'a pas levé l'exception CompetitionInexistanteException ");
 			}
-			catch (CompetitionInexistanteException e) { }			
+			catch (CompetitionInexistanteException e) {System.out.println("Ok"); }			
 			catch (Exception e) { 
 				System.out.println("consulterCompetiteurs avec une competition inexistante n'a pas levé l'exception CompetitionInexistanteException mais " + e.getClass().getName());
 			}
@@ -1508,7 +1508,7 @@ public class TestMetier {
 //		testMiserVainqueur(); QUAN
 //		testSolderVainqueur(); JUAN
 //		testConsulterCompetitions();
-//		testConsulterCompetiteurs();
+		testConsulterCompetiteurs();
 //		testConsulterJoueurs();		
 
 	}

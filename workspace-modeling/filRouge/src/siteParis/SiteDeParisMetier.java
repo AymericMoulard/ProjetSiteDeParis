@@ -174,18 +174,20 @@ public class SiteDeParisMetier {
       
       validitePasswordGestionnaire(passwordGestionnaire);
       veracitePasswordGestionnaire(passwordGestionnaire);
+      // La verification que le nom de la compétition est recevable s'effectue dans la classe Competition
       
+      // Verification que la compétition n'est pas déja enregistrée
       if (this.competitions.size() > 0){
          for (Competition c:competitions){
             if ( c.getNomCompetition().equals(nomCompetition) )
                throw new CompetitionExistanteException();
          }
       }
-      
+      // Verification que la liste des compétiteurs fournie contient au moins deux compétiteurs 
       if ( stringCompetiteurs == null ) throw new MetierException();
       if ( stringCompetiteurs.length <= 1  ) throw new CompetitionException();
       
-      
+      // Vérification qu'un compétiteur n'est pas présent deux fois dans la liste fournie (ne se bat pas contre lui-même)
       for (int i=0;i<stringCompetiteurs.length;i++){
          for (int j=0;j<stringCompetiteurs.length;j++){
             if ( (stringCompetiteurs[i]== stringCompetiteurs[j]) &&  (i!=j) )
@@ -193,26 +195,21 @@ public class SiteDeParisMetier {
          }
       }
       
-         
+      // Vérification que les dates sont cohérentes   
       if ( dateCloture == null   ) throw new CompetitionException();  
       if ( dateCloture.estDansLePasse()   ) throw new CompetitionException();  
       
       
-      Competition competition = new Competition(nomCompetition,dateCloture);
-      
       LinkedList<Competiteur> competiteurs = new LinkedList<Competiteur>();
-      
       for (String s: stringCompetiteurs)
          competiteurs.add( new Competiteur(s) );
          
           
-      
+      Competition competition = new Competition(nomCompetition,dateCloture);
       competition.setListeCompetiteurs(competiteurs);      
-      
+      //Ajout de la compétition créée dans la liste de compétitions du site
       this.competitions.add(competition);
       
-      
-   
    }
 
 
@@ -349,7 +346,22 @@ public class SiteDeParisMetier {
    
       validitePasswordGestionnaire(passwordGestionnaire);
       veracitePasswordGestionnaire(passwordGestionnaire);
-      return new LinkedList <LinkedList <String>>();
+      
+      LinkedList<LinkedList <String>> listeAretourner = new LinkedList<LinkedList <String>>();
+         for (Joueur j:joueurs) {
+            LinkedList<String> attributsDuJoueur = new LinkedList<String>();
+            attributsDuJoueur.add(j.getNom());
+            attributsDuJoueur.add(j.getPrenom());
+            attributsDuJoueur.add(j.getPseudo());
+            // Conversion de la valeur du compte en jetons de long à String
+            String compteDuJoueur = Long.toString(j.getSommeEnJetons());
+            attributsDuJoueur.add(compteDuJoueur);
+            // A continuer,je ne sais pas encore comment on gère la mise sur un vainqueur
+            
+            // Une fois les attributs empaquetés, on les ajoute à la liste générale
+            listeAretourner.add(attributsDuJoueur); 
+         }
+      return listeAretourner;
    }
 
 
@@ -420,7 +432,19 @@ public class SiteDeParisMetier {
 	 * @return la liste des compÃ©titeurs de la  compÃ©tition.
 	 */
    public LinkedList <String> consulterCompetiteurs(String competition) throws CompetitionException, CompetitionInexistanteException{
-      return new LinkedList <String> ();
+      validiteCompetition(competition);
+      
+      // L'existance de la compétition est vérifiée à l'interieur de "getCompetition" 
+      LinkedList<Competiteur> listeCompetiteurs = getCompetition(competition).getListeCompetiteurs();
+      
+      // Construction puis remplissage de la liste à renvoyer
+      LinkedList<String> listeCompetiteursString = new LinkedList<String>();
+      for (Competiteur c:listeCompetiteurs) {
+         listeCompetiteursString.add(c.getNomCompetiteur());
+         }
+         
+      // on retourne la liste composée du nom des competiteurs   
+      return listeCompetiteursString;
    }
 
 	/**
@@ -455,6 +479,22 @@ public class SiteDeParisMetier {
       if (joueurInexistant) {throw new JoueurInexistantException(); }
    }
    
+   // Validité ou existance de la compétition
+   protected void validiteCompetition(String nomCompetition) throws CompetitionException {
+      if (nomCompetition == null) {throw new CompetitionException();}
+      if (!nomCompetition.matches("[a-zA-Z0-9-._]{4,}")) {throw new CompetitionException();}
+   }
+   
+/* protected void existanceCompetition(String nomCompetition) throws CompetitionInexistanteException {
+      boolean competitionInexistante = true;
+      for(Competition c:competitions){
+         if (c.getNomCompetition().equals(nomCompetition)){
+            competitionInexistante = false;
+         }
+      }
+      if (competitionInexistante) {throw new CompetitionInexistanteException(); }
+   }*/
+   
    //getJoueur permet de récupérer "joueur" à partir de son nom, prénom, pseudo
    protected Joueur getJoueur(String nom, String prenom, String pseudo) throws JoueurInexistantException {
       boolean joueurInexistant = true;
@@ -465,6 +505,19 @@ public class SiteDeParisMetier {
          }
       }
       if (joueurInexistant) {throw new JoueurInexistantException(); }
+      return null;
+   }
+   
+   // getCompetition permet de récupérer "competition" àpartir de son nom
+   protected Competition getCompetition(String nomCompetition) throws CompetitionInexistanteException {
+      boolean competitionInexistante = true;
+      for(Competition c:competitions){
+         if (c.getNomCompetition().equals(nomCompetition)){
+            competitionInexistante = false;
+            return c;
+         }
+      }
+      if (competitionInexistante) {throw new CompetitionInexistanteException(); }
       return null;
    }
    

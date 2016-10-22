@@ -30,9 +30,11 @@ public class Competiteur {
       this.nomCompetiteur = nomCompetiteur;
       this.listeCompetitions = new LinkedList<Competition>();
       this.joueurs = new LinkedList<Joueur>();
-      
       }
    
+   public String getNomCompetiteur(){
+      return this.nomCompetiteur;
+      }
    
 
 
