@@ -347,7 +347,7 @@ public class SiteDeParisMetier {
       validitePasswordGestionnaire(passwordGestionnaire);
       veracitePasswordGestionnaire(passwordGestionnaire);
       
-      LinkedList<LinkedList <String>> listeAretourner = new LinkedList<LinkedList <String>>();
+      LinkedList<LinkedList <String>> listeJoueursString = new LinkedList<LinkedList <String>>();
          for (Joueur j:joueurs) {
             LinkedList<String> attributsDuJoueur = new LinkedList<String>();
             attributsDuJoueur.add(j.getNom());
@@ -359,9 +359,9 @@ public class SiteDeParisMetier {
             // A continuer,je ne sais pas encore comment on gère la mise sur un vainqueur
             
             // Une fois les attributs empaquetés, on les ajoute à la liste générale
-            listeAretourner.add(attributsDuJoueur); 
+            listeJoueursString.add(attributsDuJoueur); 
          }
-      return listeAretourner;
+      return listeJoueursString;
    }
 
 
@@ -416,8 +416,16 @@ public class SiteDeParisMetier {
 	 *  <li>       la date de clÃ´ture de la compÃ©tition. </li>
 	 *  </ul>
 	 */
-   public LinkedList <LinkedList <String>> consulterCompetitions(){
-      return new LinkedList <LinkedList <String>>();
+   public LinkedList<LinkedList<String>> consulterCompetitions(){
+      LinkedList<LinkedList<String>> listeCompetitions = new LinkedList<LinkedList<String>>();
+      for (Competition c:competitions){
+         LinkedList<String> attributsCompetition = new LinkedList<String>();
+         attributsCompetition.add(c.getNomCompetition());
+         String dateCloture = c.getDateCloture().toString();
+         attributsCompetition.add(dateCloture);
+         listeCompetitions.add(attributsCompetition);
+         }
+      return listeCompetitions;
    } 
 
 	/**
@@ -431,7 +439,7 @@ public class SiteDeParisMetier {
 	 * 
 	 * @return la liste des compÃ©titeurs de la  compÃ©tition.
 	 */
-   public LinkedList <String> consulterCompetiteurs(String competition) throws CompetitionException, CompetitionInexistanteException{
+   public LinkedList<String> consulterCompetiteurs(String competition) throws CompetitionException, CompetitionInexistanteException{
       validiteCompetition(competition);
       
       // L'existance de la compétition est vérifiée à l'interieur de "getCompetition" 

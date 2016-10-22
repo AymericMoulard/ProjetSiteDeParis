@@ -1507,7 +1507,7 @@ public class TestMetier {
 		testCrediterDebiterJoueur(); //Aymeric
 //		testMiserVainqueur(); QUAN
 //		testSolderVainqueur(); JUAN
-//		testConsulterCompetitions();
+		testConsulterCompetitions();
 		testConsulterCompetiteurs();
 //		testConsulterJoueurs();		
 

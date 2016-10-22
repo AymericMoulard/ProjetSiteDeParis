@@ -31,14 +31,13 @@ public class Competition {
 		this.dateCloture = dateCloture;
 		this.competiteurs = new LinkedList<Competiteur>();
 	}
-	
-   
-   
    
 	public String getNomCompetition() {
 		return nomCompetition;
 	}
-
+   public DateFrancaise getDateCloture(){
+      return dateCloture;
+   }
 
 
 
