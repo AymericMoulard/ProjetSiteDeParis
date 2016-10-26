@@ -3,7 +3,7 @@ package siteParis;
 import java.util.Collection;
 import java.util.LinkedList;
 
-
+// Commentaire pour git
 public class Competiteur {
 
 
