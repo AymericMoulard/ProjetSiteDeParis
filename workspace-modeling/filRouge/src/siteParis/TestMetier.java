@@ -954,7 +954,7 @@ public class TestMetier {
 				siteDeParisMetier.solderVainqueur(new String("finaleRG2012"),new String("Nadal"), new String("ilesCaimans"));
 				System.out.println("une compétition non terminée a été soldée sans lever CompetitionException");
 			} 
-			catch (CompetitionException e) { System.out.println("Test 5.1: ça marche");}
+			catch (CompetitionException e) { System.out.println("Test 6.1: ça marche");}
 			catch (Exception e) { 
 				System.out.println("une compétition non terminée a été soldée sans lever CompetitionException mais " + e.getClass().getName());
 			}
@@ -965,7 +965,7 @@ public class TestMetier {
 				siteDeParisMetier.solderVainqueur(new String("finaleRG2012"),"Federer", new String("ilesCaimans"));
 				System.out.println("une compétition avec un vainqueur inexistant a été soldée sans lever CompetitionException");
 			}
-			catch (CompetitionException e) { System.out.println("Test 5.2: ça marche");}
+			catch (CompetitionException e) { System.out.println("Test 6.2: ça marche");}
 			catch (Exception e) { 
 				System.out.println("uune compétition avec un vainqueur inexistant a été soldée sans lever CompetitionException mais " + e.getClass().getName());
 			}
@@ -974,7 +974,7 @@ public class TestMetier {
 				siteDeParisMetier.solderVainqueur(new String("finaleRG2012"),new String("Tsonga"), "ilesCimans");
 				System.out.println("une compétition a été soldée avec un password gestionnaire incorrect sans lever MetierException");
 			}
-			catch (MetierException e) { System.out.println("Test 5.3: ça marche");}
+			catch (MetierException e) { System.out.println("Test 6.3: ça marche");}
 			catch (Exception e) { 
 				System.out.println("uune compétition a été soldée avec un password gestionnaire incorrect sans lever MetierException mais " + e.getClass().getName());
 			}
@@ -983,7 +983,7 @@ public class TestMetier {
 				siteDeParisMetier.solderVainqueur(new String("finaleRG2012"),new String("Tsonga"), "il*ns");
 				System.out.println("une compétition a été soldée avec un password gestionnaire invalide sans lever MetierException");
 			}
-			catch (MetierException e) {System.out.println("Test 5.4: ça marche"); }
+			catch (MetierException e) {System.out.println("Test 6.4: ça marche"); }
 			catch (Exception e) { 
 				System.out.println("une compétition a été soldée avec un password gestionnaire invalide sans lever MetierException mais " + e.getClass().getName());
 			}
@@ -992,7 +992,7 @@ public class TestMetier {
 				siteDeParisMetier.solderVainqueur("ChampionnatDeRance2012",new String("Marseille"), new String("ilesCaimans"));
 				System.out.println("une compétition inexistante est  soldée sans lever CompetitionInexistanteException");
 			}
-			catch (CompetitionInexistanteException e) { System.out.println("Test 5.5: ça marche");}
+			catch (CompetitionInexistanteException e) { System.out.println("Test 6.5: ça marche");}
 			catch (Exception e) { 
 				System.out.println("uune compétition inexistante est  soldée sans lever CompetitionInexistanteException mais " + e.getClass().getName());
 			}
@@ -1010,7 +1010,7 @@ public class TestMetier {
 				siteDeParisMetier.solderVainqueur(new String("ChampionnatDeFrance2012"),"Nancy", new String("ilesCaimans"));
 				System.out.println("une compétition déja soldée est  soldée sans lever CompetitionInexistanteException");
 			}
-			catch (CompetitionInexistanteException e) { System.out.println("Test 5.6: ça marche");}
+			catch (CompetitionInexistanteException e) { System.out.println("Test 6.6: ça marche");}
 			catch (Exception e) { 
 				System.out.println("une compétition déja soldée  soldée sans lever CompetitionInexistanteException mais " + e.getClass().getName());
 			}
@@ -1023,7 +1023,7 @@ public class TestMetier {
 				siteDeParisMetier.debiterJoueur(new String("Prou"), new String("Bernard"), new String("nanard"), 1790, new String("ilesCaimans"));
 				System.out.println("le credit de bernard devrait être inférieur à 1790, et l'exception JoueurException aurait dû être levée");
 			}
-			catch (JoueurException e) { System.out.println("Test 5.7: ça marche");} 
+			catch (JoueurException e) { System.out.println("Test 6.7: ça marche");} 
 			catch (Exception e) { 
 				System.out.println("le credit de bernard devrait être inférieur à 1790, et l'exception JoueurException aurait dû être levée mais c'est : " + e.getClass().getName());
 			}
@@ -1045,7 +1045,7 @@ public class TestMetier {
 				siteDeParisMetier.debiterJoueur(new String("Prou"), new String("Aureliane"), new String("aure"), 786, new String("ilesCaimans"));
 				System.out.println("le credit d'aure devrait être inférieur à 786, et l'exception JoueurException aurait dû être levée");
 			}
-			catch (JoueurException e) { System.out.println("Test 5.8: ça marche");} 
+			catch (JoueurException e) { System.out.println("Test 6.8: ça marche");} 
 			catch (Exception e) { 
 				System.out.println("le credit d'aure devrait être inférieur à 786, et l'exception JoueurException aurait dû être levée mais c'est : " + e.getClass().getName());
 			}
@@ -1138,7 +1138,7 @@ public class TestMetier {
 				siteDeParisMetier.debiterJoueur(new String("Prou"), new String("Bernard"), new String("nanard"), 1869, new String("ilesCaimans"));
 				System.out.println("le credit de bernard devrait être inférieur à 1869, et l'exception JoueurException aurait dû être levée");
 			}
-			catch (JoueurException e) { System.out.println("Test 5.9: ça marche");} 
+			catch (JoueurException e) { System.out.println("Test 6.9: ça marche");} 
 			catch (Exception e) { 
 				System.out.println("le credit de bernard devrait être inférieur à 1869, et l'exception JoueurException aurait dû être levée mais c'est : " + e.getClass().getName());
 			}
@@ -1160,7 +1160,7 @@ public class TestMetier {
 				siteDeParisMetier.debiterJoueur(new String("Prou"), new String("Aureliane"), new String("aure"), 905, new String("ilesCaimans"));
 				System.out.println("le credit d'aure devrait être inférieur à 905, et l'exception JoueurException aurait dû être levée");
 			}
-			catch (JoueurException e) { System.out.println("Test 5.10: ça marche");} 
+			catch (JoueurException e) { System.out.println("Test 6.10: ça marche");} 
 			catch (Exception e) { 
 				System.out.println("le credit d'aure devrait être inférieur à 905, et l'exception JoueurException aurait dû être levée mais c'est : " + e.getClass().getName());
 			}
@@ -1181,7 +1181,7 @@ public class TestMetier {
 				siteDeParisMetier.debiterJoueur(new String("Nadou"), new String("Sylvain"), new String("zinzin"), 1044, new String("ilesCaimans"));
 				System.out.println("le credit de zinzin devrait être inférieur à 1044, et l'exception JoueurException aurait dû être levée");
 			}
-			catch (JoueurException e) { System.out.println("Test 5.11: ça marche");} 
+			catch (JoueurException e) { System.out.println("Test 6.11: ça marche");} 
 			catch (Exception e) { 
 				System.out.println("le credit de zinzin devrait être inférieur à 1044, et l'exception JoueurException aurait dû être levée mais c'est : " + e.getClass().getName());
 			}
@@ -1364,7 +1364,7 @@ public class TestMetier {
 				siteDeParisMetier.consulterJoueurs(null);
 				System.out.println("consulterJoueurs avec un password invalide (non instancié) n'a pas levé l'exception MetierException ");
 			}
-			catch (MetierException e) {System.out.println("Ok 1");  }	
+			catch (MetierException e) { }	
 			catch (Exception e) { 
 				System.out.println("consulterJoueurs avec un password invalide (non instancié) n'a pas levé l'exception MetierException mais " + e.getClass().getName());
 			}
@@ -1373,7 +1373,7 @@ public class TestMetier {
 				siteDeParisMetier.consulterJoueurs("i2");
 				System.out.println("consulterJoueurs avec un password invalide (moins de 4 caractères) n'a pas levé l'exception MetierException ");
 			}
-			catch (MetierException e) {System.out.println("Ok 2"); }			
+			catch (MetierException e) { }			
 			catch (Exception e) { 
 				System.out.println("consulterJoueurs avec un password invalide (moins de 4 caractères) n'a pas levé l'exception MetierException mais " + e.getClass().getName());
 			}
@@ -1382,7 +1382,7 @@ public class TestMetier {
 				siteDeParisMetier.consulterJoueurs("inconnu");
 				System.out.println("consulterJoueurs avec un password incorrect n'a pas levé l'exception MetierException ");
 			}
-			catch (MetierException e) {System.out.println("Ok 3"); }			
+			catch (MetierException e) { }			
 			catch (Exception e) { 
 				System.out.println("consulterJoueurs avec un password incorrect n'a pas levé l'exception MetierException mais " + e.getClass().getName());
 			}
@@ -1391,7 +1391,7 @@ public class TestMetier {
 
 			if (siteDeParisMetier.consulterJoueurs(new String("ilesCaimans")).size() != 0)
 				System.out.println("consulterJoueurs  rend une  liste non vide alors que  le site  vient d'être crée et sans qu'il y ait eu d'inscription de joueurs");
-         else System.out.println("Ok 4");
+
 
 			DateFrancaise.setDate(1, 1, 2010);
 
@@ -1406,7 +1406,7 @@ public class TestMetier {
 
 			if (siteDeParisMetier.consulterJoueurs(new String("ilesCaimans")).size() != 6)
 				System.out.println("consulterJoueurs  rend une  liste qui n'a pas 6 éléments alors qu'il y a eu inscription de 6 joueurs");
-         else System.out.println("Ok 5");
+
 			// crédit  de joueurs
 
 			siteDeParisMetier.crediterJoueur(new String("Prou"), new String("Bernard"), new String("nanard"), 1789, new String("ilesCaimans"));
@@ -1420,13 +1420,13 @@ public class TestMetier {
 			LinkedList <LinkedList <String>> joueurs = siteDeParisMetier.consulterJoueurs(new String("ilesCaimans"));
 			for (LinkedList <String> l : joueurs) {
 				if (l.get(2).equals(new String("momo")) && (!l.get(0).equals(new String("Prou")) || !l.get(1).equals(new String("Morgane")) || !l.get(3).equals("" + 1848) || !l.get(4).equals("" + 0)))
-					System.out.println("probleme sur affichage du joueur momo après crédit");			
+					System.out.println("probleme sur affichage du joueur momo après crédit");				
 				if (l.get(2).equals(new String("nanard")) && (!l.get(0).equals(new String("Prou")) || !l.get(1).equals(new String("Bernard")) || !l.get(3).equals("" + 1789)|| !l.get(4).equals("" + 0)))
-					System.out.println("probleme sur affichage du joueur nanard après crédit");
+					System.out.println("probleme sur affichage du joueur nanard après crédit");				
 				if (l.get(2).equals(new String("zinzin")) && (!l.get(0).equals(new String("Nadou")) || !l.get(1).equals(new String("Sylvain")) || !l.get(3).equals("" + 1123)|| !l.get(4).equals("" + 0)))
-					System.out.println("probleme sur affichage du joueur zinzin après crédit");
+					System.out.println("probleme sur affichage du joueur zinzin après crédit");				
 				if (l.get(2).equals(new String("aure")) && (!l.get(0).equals(new String("Prou")) || !l.get(1).equals(new String("Aureliane")) || !l.get(3).equals("" + 785) || !l.get(4).equals("" + 0)))
-					System.out.println("probleme sur affichage du joueur aure après crédit") ;
+					System.out.println("probleme sur affichage du joueur aure après crédit");				
 			}
 
 			// ajout de compétions
@@ -1449,13 +1449,13 @@ public class TestMetier {
 			joueurs = siteDeParisMetier.consulterJoueurs(new String("ilesCaimans"));
 			for (LinkedList <String> l : joueurs) {
 				if (l.get(2).equals(new String("momo")) && (!l.get(0).equals(new String("Prou")) || !l.get(1).equals(new String("Morgane")) || !l.get(3).equals("" + 1848) || !l.get(4).equals("" + 0)))
-					System.out.println("probleme sur affichage du joueur momo après paris");
+					System.out.println("probleme sur affichage du joueur momo après paris");				
 				if (l.get(2).equals(new String("nanard")) && (!l.get(0).equals(new String("Prou")) || !l.get(1).equals(new String("Bernard")) || !l.get(3).equals("" + 1669) || !l.get(4).equals("" + 120)))
-					System.out.println("probleme sur affichage du joueur nanard après paris");
+					System.out.println("probleme sur affichage du joueur nanard après paris");				
 				if (l.get(2).equals(new String("zinzin")) && (!l.get(0).equals(new String("Nadou")) || !l.get(1).equals(new String("Sylvain")) || !l.get(3).equals("" + 1083) || !l.get(4).equals("" + 40)))
-					System.out.println("probleme sur affichage du joueur zinzin après paris");
+					System.out.println("probleme sur affichage du joueur zinzin après paris");				
 				if (l.get(2).equals(new String("aure")) && (!l.get(0).equals(new String("Prou")) || !l.get(1).equals(new String("Aureliane")) || !l.get(3).equals("" + 700) || !l.get(4).equals("" + 85)))
-					System.out.println("probleme sur affichage du joueur aure après paris");
+					System.out.println("probleme sur affichage du joueur aure après paris");				
 			}
 
 
@@ -1509,7 +1509,7 @@ public class TestMetier {
 		testSolderVainqueur(); //JUAN
 		testConsulterCompetitions();
 		testConsulterCompetiteurs();
-		testConsulterJoueurs();		
+//		testConsulterJoueurs();		
 
 	}
 
