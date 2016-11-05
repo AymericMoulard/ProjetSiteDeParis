@@ -19,6 +19,7 @@ public class Competition {
 	private DateFrancaise dateCloture;
    
    private LinkedList<Competiteur> competiteurs;
+   private LinkedList<Pari> paris;
 	
 	
 	public Competition(String nomCompetition, DateFrancaise dateCloture) throws CompetitionException{
@@ -30,6 +31,7 @@ public class Competition {
 		this.nomCompetition = nomCompetition;
 		this.dateCloture = dateCloture;
 		this.competiteurs = new LinkedList<Competiteur>();
+      this.paris = new LinkedList<Pari>();
 	}
    
 	public String getNomCompetition() {
@@ -51,6 +53,14 @@ public class Competition {
 	public void setListeCompetiteurs(LinkedList<Competiteur> listeCompetiteurs) {
 		competiteurs = listeCompetiteurs;
 	}
+   
+   public void setListeParis(LinkedList<Pari> listeParis) {
+		paris = listeParis;
+	}
+
+   public void ajouterPari(Pari pari){
+      this.paris.add(pari);
+   }
 
 	/**
 	 * Getter of the property <tt>listeCompetiteurs</tt>
@@ -61,11 +71,48 @@ public class Competition {
 		return competiteurs;
 	}
 
-
+   public LinkedList<Pari> getListeParis() {
+		return paris;
+	}
 	
+   
+   
+   
+      protected void validiteCompetiteur(String nomCompetiteur) throws CompetitionException {
+         if (nomCompetiteur == null) {throw new CompetitionException();}
+         if (!nomCompetiteur.matches("[a-zA-Z0-9-._]{4,}")) {throw new CompetitionException();}
+      }
+      
+     protected void existanceCompetiteur(String nomCompetiteur) throws CompetitionException {
+         boolean competiteurInexistante = true;
+         for(Competiteur c:competiteurs){
+            if (c.getNomCompetiteur().equals(nomCompetiteur)){
+               competiteurInexistante = false;
+            }
+         }
+         if (competiteurInexistante) {throw new CompetitionException(); }
+      }
 
 
 
+   private long getSommePourCompetiteur(String nomCompetiteur){
+      long somme = 0;
+      for (Pari p:paris){
+         if (p.getVainqueur().equals(nomCompetiteur))
+           somme += p.getSommeMise(); 
+      }
+      return somme;
+   
+   }
+   
+    private long getSommeTotal(){
+      long somme = 0;
+      for (Pari p:paris){
+         somme += p.getSommeMise(); 
+      }
+      return somme;
+   
+   }
 
 
 

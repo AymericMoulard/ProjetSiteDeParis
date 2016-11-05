@@ -24,6 +24,10 @@ public class Joueur {
       this.prenom = prenom;
       this.pseudo = pseudo;
       this.sommeEnJetons = 0;
+      
+      /* On peut rendre le processus plus compliqué si on le souhaite */
+      String passwordUnique = "password"+pseudo;
+      return passwordUnique;
    }
       
    

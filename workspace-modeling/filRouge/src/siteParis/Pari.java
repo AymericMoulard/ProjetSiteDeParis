@@ -12,15 +12,15 @@ public class Pari {
    private long sommeMise;
    
    
-   public Pari(pseudo,vainqueur,somme){
+   public Pari(String pseudo,String vainqueur,long somme){
       
       this.pseudo = pseudo;
       this.vainqueur = vainqueur;
       this.sommeMise = somme;
    }
    
-   public String getPsuedo() {return pseudo;}
-   public String getVanqueur() {return vanqueur;}
+   public String getPseudo() {return pseudo;}
+   public String getVainqueur() {return vainqueur;}
    public long getSommeMise() {return sommeMise;}
 
    
