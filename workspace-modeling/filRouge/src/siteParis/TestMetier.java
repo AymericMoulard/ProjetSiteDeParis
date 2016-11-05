@@ -1364,7 +1364,7 @@ public class TestMetier {
 				siteDeParisMetier.consulterJoueurs(null);
 				System.out.println("consulterJoueurs avec un password invalide (non instancié) n'a pas levé l'exception MetierException ");
 			}
-			catch (MetierException e) { }	
+			catch (MetierException e) {System.out.println("Ok 1");  }	
 			catch (Exception e) { 
 				System.out.println("consulterJoueurs avec un password invalide (non instancié) n'a pas levé l'exception MetierException mais " + e.getClass().getName());
 			}
@@ -1373,7 +1373,7 @@ public class TestMetier {
 				siteDeParisMetier.consulterJoueurs("i2");
 				System.out.println("consulterJoueurs avec un password invalide (moins de 4 caractères) n'a pas levé l'exception MetierException ");
 			}
-			catch (MetierException e) { }			
+			catch (MetierException e) {System.out.println("Ok 2"); }			
 			catch (Exception e) { 
 				System.out.println("consulterJoueurs avec un password invalide (moins de 4 caractères) n'a pas levé l'exception MetierException mais " + e.getClass().getName());
 			}
@@ -1382,7 +1382,7 @@ public class TestMetier {
 				siteDeParisMetier.consulterJoueurs("inconnu");
 				System.out.println("consulterJoueurs avec un password incorrect n'a pas levé l'exception MetierException ");
 			}
-			catch (MetierException e) { }			
+			catch (MetierException e) {System.out.println("Ok 3"); }			
 			catch (Exception e) { 
 				System.out.println("consulterJoueurs avec un password incorrect n'a pas levé l'exception MetierException mais " + e.getClass().getName());
 			}
@@ -1391,7 +1391,7 @@ public class TestMetier {
 
 			if (siteDeParisMetier.consulterJoueurs(new String("ilesCaimans")).size() != 0)
 				System.out.println("consulterJoueurs  rend une  liste non vide alors que  le site  vient d'être crée et sans qu'il y ait eu d'inscription de joueurs");
-
+         else System.out.println("Ok 4");
 
 			DateFrancaise.setDate(1, 1, 2010);
 
@@ -1406,7 +1406,7 @@ public class TestMetier {
 
 			if (siteDeParisMetier.consulterJoueurs(new String("ilesCaimans")).size() != 6)
 				System.out.println("consulterJoueurs  rend une  liste qui n'a pas 6 éléments alors qu'il y a eu inscription de 6 joueurs");
-
+         else System.out.println("Ok 5");
 			// crédit  de joueurs
 
 			siteDeParisMetier.crediterJoueur(new String("Prou"), new String("Bernard"), new String("nanard"), 1789, new String("ilesCaimans"));
@@ -1420,13 +1420,13 @@ public class TestMetier {
 			LinkedList <LinkedList <String>> joueurs = siteDeParisMetier.consulterJoueurs(new String("ilesCaimans"));
 			for (LinkedList <String> l : joueurs) {
 				if (l.get(2).equals(new String("momo")) && (!l.get(0).equals(new String("Prou")) || !l.get(1).equals(new String("Morgane")) || !l.get(3).equals("" + 1848) || !l.get(4).equals("" + 0)))
-					System.out.println("probleme sur affichage du joueur momo après crédit");				
+					System.out.println("probleme sur affichage du joueur momo après crédit");			
 				if (l.get(2).equals(new String("nanard")) && (!l.get(0).equals(new String("Prou")) || !l.get(1).equals(new String("Bernard")) || !l.get(3).equals("" + 1789)|| !l.get(4).equals("" + 0)))
-					System.out.println("probleme sur affichage du joueur nanard après crédit");				
+					System.out.println("probleme sur affichage du joueur nanard après crédit");
 				if (l.get(2).equals(new String("zinzin")) && (!l.get(0).equals(new String("Nadou")) || !l.get(1).equals(new String("Sylvain")) || !l.get(3).equals("" + 1123)|| !l.get(4).equals("" + 0)))
-					System.out.println("probleme sur affichage du joueur zinzin après crédit");				
+					System.out.println("probleme sur affichage du joueur zinzin après crédit");
 				if (l.get(2).equals(new String("aure")) && (!l.get(0).equals(new String("Prou")) || !l.get(1).equals(new String("Aureliane")) || !l.get(3).equals("" + 785) || !l.get(4).equals("" + 0)))
-					System.out.println("probleme sur affichage du joueur aure après crédit");				
+					System.out.println("probleme sur affichage du joueur aure après crédit") ;
 			}
 
 			// ajout de compétions
@@ -1449,13 +1449,13 @@ public class TestMetier {
 			joueurs = siteDeParisMetier.consulterJoueurs(new String("ilesCaimans"));
 			for (LinkedList <String> l : joueurs) {
 				if (l.get(2).equals(new String("momo")) && (!l.get(0).equals(new String("Prou")) || !l.get(1).equals(new String("Morgane")) || !l.get(3).equals("" + 1848) || !l.get(4).equals("" + 0)))
-					System.out.println("probleme sur affichage du joueur momo après paris");				
+					System.out.println("probleme sur affichage du joueur momo après paris");
 				if (l.get(2).equals(new String("nanard")) && (!l.get(0).equals(new String("Prou")) || !l.get(1).equals(new String("Bernard")) || !l.get(3).equals("" + 1669) || !l.get(4).equals("" + 120)))
-					System.out.println("probleme sur affichage du joueur nanard après paris");				
+					System.out.println("probleme sur affichage du joueur nanard après paris");
 				if (l.get(2).equals(new String("zinzin")) && (!l.get(0).equals(new String("Nadou")) || !l.get(1).equals(new String("Sylvain")) || !l.get(3).equals("" + 1083) || !l.get(4).equals("" + 40)))
-					System.out.println("probleme sur affichage du joueur zinzin après paris");				
+					System.out.println("probleme sur affichage du joueur zinzin après paris");
 				if (l.get(2).equals(new String("aure")) && (!l.get(0).equals(new String("Prou")) || !l.get(1).equals(new String("Aureliane")) || !l.get(3).equals("" + 700) || !l.get(4).equals("" + 85)))
-					System.out.println("probleme sur affichage du joueur aure après paris");				
+					System.out.println("probleme sur affichage du joueur aure après paris");
 			}
 
 
@@ -1509,7 +1509,7 @@ public class TestMetier {
 		testSolderVainqueur(); //JUAN
 		testConsulterCompetitions();
 		testConsulterCompetiteurs();
-//		testConsulterJoueurs();		
+		testConsulterJoueurs();		
 
 	}
 

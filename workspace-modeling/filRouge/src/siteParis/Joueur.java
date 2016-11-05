@@ -13,7 +13,6 @@ public class Joueur {
 	private String prenom;
 	private String pseudo;
    private long sommeEnJetons;
-   private String passwordJoueur;
 
    
    public Joueur(String nom, String prenom, String pseudo) throws JoueurException{
@@ -94,16 +93,16 @@ public class Joueur {
 		this.pseudo = pseudo;
 	}
    
-   protected void crediterJoueur(long sommeEnJetons) {
-      this.sommeEnJetons += sommeEnJetons;
+   protected void crediterJoueur(long creditEnJetons) {
+      this.sommeEnJetons += creditEnJetons;
    }
    
-   protected void debiterJoueur(long sommeEnJetons) {
-      this.sommeEnJetons -= sommeEnJetons;
+   protected void debiterJoueur(long debitEnJetons) {
+      this.sommeEnJetons -= debitEnJetons;
    }
    
    public long getSommeEnJetons() {
       return this.sommeEnJetons;
    }
-
+   
 }

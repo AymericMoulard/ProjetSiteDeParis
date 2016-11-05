@@ -253,23 +253,34 @@ public class SiteDeParisMetier {
       existanceCompetition(competition);
       
       Competition comp = getCompetition(competition);
+      
+      if ( !comp.getDateCloture().estDansLePasse() ) throw new CompetitionException();
+      
       comp.validiteCompetiteur(vainqueur);
       comp.existanceCompetiteur(vainqueur);
  
       long sommePourVainqueur = comp.getSommePourCompetiteur(vainqueur);
       long sommeTotal = comp.getSommeTotal();
       
+      int count=0;
+      
       for (Pari p:comp.getListeParis()){
          if (p.getVainqueur().equals(vainqueur)){
+            count++;
             Joueur j = getJoueurByPseudo(p.getPseudo());
             crediterJoueur(j.getNom(), j.getPrenom(), j.getPseudo(),  p.getSommeMise()*sommeTotal/sommePourVainqueur,passwordGestionnaire);
          }
       }
       
+      if (count==0){
+          for (Pari p:comp.getListeParis()){
+               Joueur j = getJoueurByPseudo(p.getPseudo());
+               crediterJoueur(j.getNom(), j.getPrenom(), j.getPseudo(),  p.getSommeMise(),passwordGestionnaire);
+            }
+         }   
       
-      
-      
-      
+      this.competitions.remove(comp);
+  
    }
 
 
@@ -369,6 +380,15 @@ public class SiteDeParisMetier {
       veracitePasswordGestionnaire(passwordGestionnaire);
       
       LinkedList<LinkedList <String>> listeJoueursString = new LinkedList<LinkedList <String>>();
+      
+         // Récuperation de la liste de tous les paris
+         LinkedList<Pari> listeParis = new LinkedList<Pari>();
+         for (Competition c:competitions){
+            for (Pari p:c.getListeParis()){
+               listeParis.add(p);
+               }
+            }
+            
          for (Joueur j:joueurs) {
             LinkedList<String> attributsDuJoueur = new LinkedList<String>();
             attributsDuJoueur.add(j.getNom());
@@ -378,7 +398,13 @@ public class SiteDeParisMetier {
             String compteDuJoueur = Long.toString(j.getSommeEnJetons());
             attributsDuJoueur.add(compteDuJoueur);
             // A continuer,je ne sais pas encore comment on gère la mise sur un vainqueur
-            
+            long sommeEngagee = 0;
+            for (Pari p:listeParis){
+               if (p.getPseudo().equals(j.getPseudo())){
+                  sommeEngagee += p.getSommeMise();
+                  }
+               }
+            attributsDuJoueur.add(Long.toString(sommeEngagee));
             // Une fois les attributs empaquetés, on les ajoute à la liste générale
             listeJoueursString.add(attributsDuJoueur); 
          }
@@ -433,19 +459,11 @@ public class SiteDeParisMetier {
       Competition comp = getCompetition(competition);
       comp.validiteCompetiteur(vainqueurEnvisage);
       comp.existanceCompetiteur(vainqueurEnvisage);
-        
-      Pari pari = new Pari(pseudo,vainqueurEnvisage,miseEnJetons);
-      comp.ajouterPari(pari);
       
-      debiterJoueur(j.getNom(),j.getPrenom(),pseudo, miseEnJetons, passwordGestionnaire);
-       
-       
-       
-       
-       
-       
-
-   
+      debiterJoueur(j.getNom(),j.getPrenom(),pseudo, miseEnJetons, passwordGestionnaire);  
+      Pari pari = new Pari(pseudo,vainqueurEnvisage, miseEnJetons);
+      comp.ajouterPari(pari);
+         
    }
 
 

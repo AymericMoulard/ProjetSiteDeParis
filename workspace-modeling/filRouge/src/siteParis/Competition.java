@@ -71,12 +71,10 @@ public class Competition {
 		return competiteurs;
 	}
 
-   public LinkedList<Pari> getListeParis() {
+   protected LinkedList<Pari> getListeParis() {
 		return paris;
 	}
 	
-   
-   
    
       protected void validiteCompetiteur(String nomCompetiteur) throws CompetitionException {
          if (nomCompetiteur == null) {throw new CompetitionException();}
