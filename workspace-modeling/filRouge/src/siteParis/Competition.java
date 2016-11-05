@@ -19,7 +19,7 @@ public class Competition {
 	private DateFrancaise dateCloture;
    
    private LinkedList<Competiteur> competiteurs;
-   private LinkedList<Pari> paris;
+   protected LinkedList<Pari> paris;
 	
 	
 	public Competition(String nomCompetition, DateFrancaise dateCloture) throws CompetitionException{
@@ -95,7 +95,7 @@ public class Competition {
 
 
 
-   private long getSommePourCompetiteur(String nomCompetiteur){
+   protected long getSommePourCompetiteur(String nomCompetiteur){
       long somme = 0;
       for (Pari p:paris){
          if (p.getVainqueur().equals(nomCompetiteur))
@@ -105,7 +105,7 @@ public class Competition {
    
    }
    
-    private long getSommeTotal(){
+    protected long getSommeTotal(){
       long somme = 0;
       for (Pari p:paris){
          somme += p.getSommeMise(); 

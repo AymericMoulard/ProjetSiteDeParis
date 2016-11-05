@@ -105,7 +105,8 @@ public class SiteDeParisMetier {
       Joueur joueur = new Joueur(nom,prenom,pseudo);
       this.joueurs.add(joueur);  
       
-      return "unPasswordUnique";
+      /* Un password unique */
+      return "password"+pseudo;
    }
 
 	/**
@@ -243,12 +244,32 @@ public class SiteDeParisMetier {
 	 * si la date de clÃ´ture de la compÃ©tition est dans le futur.
 	 * 
 	 */	
-   public void solderVainqueur(String competition, String vainqueur, String passwordGestionnaire) throws MetierException,  CompetitionInexistanteException, CompetitionException  {
+   public void solderVainqueur(String competition, String vainqueur, String passwordGestionnaire) throws MetierException,  CompetitionInexistanteException, CompetitionException, JoueurException, JoueurInexistantException  {
    
       validitePasswordGestionnaire(passwordGestionnaire);
       veracitePasswordGestionnaire(passwordGestionnaire);
       
-     
+      validiteCompetition(competition);
+      existanceCompetition(competition);
+      
+      Competition comp = getCompetition(competition);
+      comp.validiteCompetiteur(vainqueur);
+      comp.existanceCompetiteur(vainqueur);
+ 
+      long sommePourVainqueur = comp.getSommePourCompetiteur(vainqueur);
+      long sommeTotal = comp.getSommeTotal();
+      
+      for (Pari p:comp.getListeParis()){
+         if (p.getVainqueur().equals(vainqueur)){
+            Joueur j = getJoueurByPseudo(p.getPseudo());
+            crediterJoueur(j.getNom(), j.getPrenom(), j.getPseudo(),  p.getSommeMise()*sommeTotal/sommePourVainqueur,passwordGestionnaire);
+         }
+      }
+      
+      
+      
+      
+      
    }
 
 
@@ -399,6 +420,32 @@ public class SiteDeParisMetier {
 	 */
    public void miserVainqueur(String pseudo, String passwordJoueur, long miseEnJetons, String competition, String vainqueurEnvisage) throws MetierException, JoueurInexistantException, CompetitionInexistanteException, CompetitionException, JoueurException  {
    
+      validitePasswordGestionnaire(passwordGestionnaire);
+      veracitePasswordGestionnaire(passwordGestionnaire);
+      Joueur j = getJoueurByPseudo(pseudo);
+      /* Les tests sont deja faits pas getJoueurByPseudo
+      validiteJoueur(nom, prenom, pseudo);
+      existanceJoueur(nom, prenom, pseudo);
+      */
+      validiteCompetition(competition);
+      existanceCompetition(competition);
+      
+      Competition comp = getCompetition(competition);
+      comp.validiteCompetiteur(vainqueurEnvisage);
+      comp.existanceCompetiteur(vainqueurEnvisage);
+        
+      Pari pari = new Pari(pseudo,vainqueurEnvisage,miseEnJetons);
+      comp.ajouterPari(pari);
+      
+      debiterJoueur(j.getNom(),j.getPrenom(),pseudo, miseEnJetons, passwordGestionnaire);
+       
+       
+       
+       
+       
+       
+
+   
    }
 
 
@@ -493,7 +540,7 @@ public class SiteDeParisMetier {
       if (!nomCompetition.matches("[a-zA-Z0-9-._]{4,}")) {throw new CompetitionException();}
    }
    
-/* protected void existanceCompetition(String nomCompetition) throws CompetitionInexistanteException {
+  protected void existanceCompetition(String nomCompetition) throws CompetitionInexistanteException {
       boolean competitionInexistante = true;
       for(Competition c:competitions){
          if (c.getNomCompetition().equals(nomCompetition)){
@@ -501,13 +548,30 @@ public class SiteDeParisMetier {
          }
       }
       if (competitionInexistante) {throw new CompetitionInexistanteException(); }
-   }*/
+   }
+
+
+      
+   
    
    //getJoueur permet de récupérer "joueur" à partir de son nom, prénom, pseudo
    protected Joueur getJoueur(String nom, String prenom, String pseudo) throws JoueurInexistantException {
       boolean joueurInexistant = true;
       for(Joueur j:joueurs){
          if (j.getNom().equals(nom) && j.getPrenom().equals(prenom) && j.getPseudo().equals(pseudo)){
+            joueurInexistant = false;
+            return j;
+         }
+      }
+      if (joueurInexistant) {throw new JoueurInexistantException(); }
+      return null;
+   }
+   
+   
+   protected Joueur getJoueurByPseudo(String pseudo) throws JoueurInexistantException {
+      boolean joueurInexistant = true;
+      for(Joueur j:joueurs){
+         if (j.getPseudo().equals(pseudo)){
             joueurInexistant = false;
             return j;
          }
