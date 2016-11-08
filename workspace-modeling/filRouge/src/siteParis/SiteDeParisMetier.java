@@ -594,6 +594,7 @@ public class SiteDeParisMetier {
    
    
    protected Joueur getJoueurByPseudo(String pseudo) throws JoueurInexistantException, JoueurException {
+      if (pseudo == null) { throw new JoueurException();}
       if (!pseudo.matches("[a-zA-Z0-9]{4,}")) {throw new JoueurException();}
       boolean joueurInexistant = true;
       for(Joueur j:joueurs){
