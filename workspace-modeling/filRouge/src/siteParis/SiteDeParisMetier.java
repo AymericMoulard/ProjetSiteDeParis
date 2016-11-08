@@ -450,8 +450,10 @@ public class SiteDeParisMetier {
 	 */
    public void miserVainqueur(String pseudo, String passwordJoueur, long miseEnJetons, String competition, String vainqueurEnvisage) throws MetierException, JoueurInexistantException, CompetitionInexistanteException, CompetitionException, JoueurException  {
    
-      validitePasswordGestionnaire(passwordGestionnaire);
-      veracitePasswordGestionnaire(passwordGestionnaire);
+      if (passwordJoueur==null) throw new JoueurException();
+      if (!passwordJoueur.matches("[0-9A-Za-z]{8,}")) throw new JoueurException();
+      if (!passwordJoueur.equals("password"+pseudo) ) throw new JoueurInexistantException();
+      
       Joueur j = getJoueurByPseudo(pseudo);
       /* Les tests sont deja faits pas getJoueurByPseudo
       validiteJoueur(nom, prenom, pseudo);
