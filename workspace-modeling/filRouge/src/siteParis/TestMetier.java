@@ -898,8 +898,115 @@ public class TestMetier {
 	public static void testMiserVainqueur () {
 
 		System.out.println("\n testMiserVainqueur");
+		// tests miser pour des competitions avec parieurs 
+		try {
+		// construction correcte d'un site
+
+			SiteDeParisMetier siteDeParisMetier = new SiteDeParisMetier(new String("ilesCaimans"));
+
+			DateFrancaise.setDate(1, 1, 2010);
+
+			// inscription de joueurs 
+
+			String passwdBernard = siteDeParisMetier.inscrireJoueur(new String("Prou"), new String("Bernard"), new String("nanard"), new String("ilesCaimans"));					
+			String passwdFrancoise = siteDeParisMetier.inscrireJoueur(new String("Prou"), new String("Francoise"), new String("fanfan"), new String("ilesCaimans"));					
+			String passwdPascal = siteDeParisMetier.inscrireJoueur(new String("Prou"), new String("Pascal"), new String("pascal"), new String("ilesCaimans"));
+			String passwdMorgane = siteDeParisMetier.inscrireJoueur(new String("Prou"), new String("Morgane"), new String("momo"), new String("ilesCaimans"));
+			String passwdAureliane = siteDeParisMetier.inscrireJoueur(new String("Prou"), new String("Aureliane"), new String("aure"), new String("ilesCaimans"));
+			String passwdSylvain = siteDeParisMetier.inscrireJoueur(new String("Nadou"), new String("Sylvain"), new String("zinzin"), new String("ilesCaimans"));
 
 
+			// crédit  de joueurs
+
+			siteDeParisMetier.crediterJoueur(new String("Prou"), new String("Bernard"), new String("nanard"), 1789, new String("ilesCaimans"));
+			siteDeParisMetier.crediterJoueur(new String("Prou"), new String("Francoise"), new String("fanfan"), 1917, new String("ilesCaimans"));
+			siteDeParisMetier.crediterJoueur(new String("Prou"), new String("Morgane"), new String("momo"), 1848, new String("ilesCaimans"));
+			siteDeParisMetier.crediterJoueur(new String("Prou"), new String("Aureliane"), new String("aure"), 785, new String("ilesCaimans"));
+			siteDeParisMetier.crediterJoueur(new String("Nadou"), new String("Sylvain"), new String("zinzin"), 1123, new String("ilesCaimans"));
+
+			// ajout de compétions
+			siteDeParisMetier.ajouterCompetition(new String("ChampionnatDeFrance2012"), new DateFrancaise(4, 6, 2012, 15, 00), new String [] {new String("Lyon"), new String("Marseille"), "Paris", new String("Rennes"), new String("Brest"), "StEtienne", new String("Lille"), "Nancy", "Toulouse", "Auxerre"}, new String("ilesCaimans"));
+			siteDeParisMetier.ajouterCompetition(new String("finaleRG2012"), new DateFrancaise(7, 6, 2012, 15, 00), new String [] {new String("Tsonga"), new String("Nadal")}, new String("ilesCaimans"));
+
+			try {
+			// miser un somme negative 
+
+			siteDeParisMetier.miserVainqueur(new String("nanard"), new String(passwdBernard), -40, new String("ChampionnatDeFrance2012"), new String("Lyon"));
+			System.out.println("Il y a un misé negative et n'eleve pas Exception");
+			}
+			catch (MetierException e) { System.out.println("Test X.1: ça marche");}
+			catch (Exception e) { 
+				System.out.println("une mise negative mais se leve autre competition aui n'est pas MetierException, mais " + e.getClass().getName());
+			}
+			try {
+				// joueur incorrect 
+
+				siteDeParisMetier.miserVainqueur(new String("juan"), new String(passwdBernard), 40, new String("ChampionnatDeFrance2012"), new String("Lyon"));
+				System.out.println("Il y a un psuedo incorrect et n'eleve pas Exception");
+			}
+			catch (JoueurInexistantException e) { System.out.println("Test X.2: ça marche");}
+			catch (Exception e) { 
+					System.out.println("une pseudo incorrect mais se leve autre competition aui n'est pas JoueurInexistantException, mais " + e.getClass().getName());
+			}
+			try {
+				// competition inexistante 
+
+				siteDeParisMetier.miserVainqueur(new String("nanard"), new String(passwdBernard), 40, new String("FilRouge2016"), new String("Lyon"));
+				System.out.println("Il y a un misé negative et n'eleve pas Exception");
+			}
+			catch (CompetitionInexistanteException e) { System.out.println("Test X.3: ça marche");}
+			catch (Exception e) { 
+					System.out.println("une competition inexistant mais se leve autre competition aui n'est pas CompetitionInexistanteException, mais " + e.getClass().getName());
+			}
+			try {
+				// competition incorrect
+
+				siteDeParisMetier.miserVainqueur(new String("nanard"), new String(passwdBernard), 40, null, new String("Lyon"));
+				System.out.println("Il y a un competition incorrect et n'eleve pas Exception");
+			}
+			catch (CompetitionException e) { System.out.println("Test X.4: ça marche");}
+			catch (Exception e) { 
+					System.out.println("une competition incorrect mais se leve autre competition aui n'est pas CompetitionException, mais " + e.getClass().getName());
+			}
+			try {
+				// vainqueur incorrect
+
+				siteDeParisMetier.miserVainqueur(new String("nanard"), new String(passwdBernard), 40, new String("ChampionnatDeFrance2012"), null);
+				System.out.println("Il y a un vainqueur incorrect et n'eleve pas Exception");
+			}
+			catch (CompetitionException e) { System.out.println("Test X.5: ça marche");}
+			catch (Exception e) { 
+					System.out.println("une vainqueur incorrect mais se leve autre competition aui n'est pas CompetitionException, mais " + e.getClass().getName());
+			}
+			try {
+				// pas d'argent sufficient
+
+				siteDeParisMetier.miserVainqueur(new String("nanard"), new String(passwdBernard), 1800, new String("ChampionnatDeFrance2012"),new String("Lyon"));
+				System.out.println("Il n'y a pas sufficient argent et n'eleve pas Exception");
+			}
+			catch (JoueurException e) { System.out.println("Test X.6: ça marche");}
+			catch (Exception e) { 
+					System.out.println("pas d'argent sufficient mais se leve autre competition aui n'est pas JoueurException, mais " + e.getClass().getName());
+			}
+			try {
+				// date de cloture est dans le passé
+				DateFrancaise.setDate(1, 1, 2020);
+
+				siteDeParisMetier.miserVainqueur(new String("nanard"), new String(passwdBernard), 40, new String("ChampionnatDeFrance2012"),new String("Lyon"));
+				System.out.println("La competition n'est plus ouverte et n'eleve pas Exception");
+			}
+			catch (CompetitionException e) { System.out.println("Test X.7: ça marche");}
+			catch (Exception e) { 
+					System.out.println("La competition n'est plus ouverte mais se leve autre competition aui n'est pas CompetitionException, mais " + e.getClass().getName());
+			}
+			
+
+		}
+		catch (Exception e) {
+			System.out.println("\n Exception imprévue : " + e);
+			e.printStackTrace();
+		}
+	
 	}
 
 

@@ -132,23 +132,27 @@ public class SiteDeParisMetier {
    	
       validitePasswordGestionnaire(passwordGestionnaire);
       veracitePasswordGestionnaire(passwordGestionnaire);
+      validiteJoueur(nom, prenom, pseudo);
       
-      boolean ilya=false;
-      int position=0;
+      // On verifie la présence du joueur et on le prend
+      Joueur j = getJoueurByPseudo(pseudo);
       
-      for (Joueur j:joueurs){
-         if ( j.getPseudo().equals(pseudo)) {
-            ilya = true;
-            position = joueurs.indexOf(j);}
-            
+      boolean pariEnCours = false;
+      for (Competition comp:competitions) {
+         for (Pari p:comp.getListeParis()){
+            if (p.getPseudo().equals(pseudo)){
+            pariEnCours = true;
+            break;
+            }
+         }   
+         if (pariEnCours) {break;}
       }
-      if (!ilya) throw new JoueurInexistantException();
+      if (pariEnCours) { throw new JoueurException();} 
       
-      this.joueurs.remove(position);
-      
-      
-      return 0;
-   }
+      long sommeArembourser = j.getSommeEnJetons();
+      this.joueurs.remove(j);
+      return sommeArembourser;
+      }
 
 
 
@@ -459,6 +463,9 @@ public class SiteDeParisMetier {
       Competition comp = getCompetition(competition);
       comp.validiteCompetiteur(vainqueurEnvisage);
       comp.existanceCompetiteur(vainqueurEnvisage);
+      // Vérification que les dates sont cohérentes   
+      if ( comp.getDateCloture() == null   ) throw new CompetitionException();  
+      if ( comp.getDateCloture().estDansLePasse()   ) throw new CompetitionException();  
       
       debiterJoueur(j.getNom(),j.getPrenom(),pseudo, miseEnJetons, passwordGestionnaire);  
       Pari pari = new Pari(pseudo,vainqueurEnvisage, miseEnJetons);
@@ -586,7 +593,8 @@ public class SiteDeParisMetier {
    }
    
    
-   protected Joueur getJoueurByPseudo(String pseudo) throws JoueurInexistantException {
+   protected Joueur getJoueurByPseudo(String pseudo) throws JoueurInexistantException, JoueurException {
+      if (!pseudo.matches("[a-zA-Z0-9]{4,}")) {throw new JoueurException();}
       boolean joueurInexistant = true;
       for(Joueur j:joueurs){
          if (j.getPseudo().equals(pseudo)){
