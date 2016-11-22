@@ -47,18 +47,8 @@ public class SiteDeParisMetier {
    private LinkedList<Joueur> joueurs;
    private LinkedList<Competition> competitions;
    private String passwordGestionnaire;
-   //comptesDesJoueurs n'est pas utilisé, dépend de la sécurité qu'on veut
-   //private LinkedList<long> comptesDesJoueurs;
-   
 
-	/**
-	 * constructeur de <code>SiteDeParisMetier</code>. 
-	 * 
-	 * @param passwordGestionnaire   le password du gestionnaire.   
-	 * 
-	 * @throws MetierException  levÃ©e 
-	 * si le <code>passwordGestionnaire</code>  est invalide 
-	 */
+
    public SiteDeParisMetier(String passwordGestionnaire) throws MetierException {
       
       validitePasswordGestionnaire(passwordGestionnaire);

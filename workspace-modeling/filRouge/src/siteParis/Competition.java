@@ -6,15 +6,7 @@ import java.util.LinkedList;
 
 public class Competition {
 
-	
-	/*private LinkedList<Competiteur> listeCompetiteurs;
-	
-	private DateFrancaise dateCloture;
-	*/
 
-	/**
-	 * @uml.property  name="nomCompetition"
-	 */
 	private String nomCompetition;
 	private DateFrancaise dateCloture;
    
@@ -42,14 +34,6 @@ public class Competition {
    }
 
 
-
-
-
-	/**
-	 * Setter of the property <tt>listeCompetiteurs</tt>
-	 * @param listeCompetiteurs  The competiteurs to set.
-	 * @uml.property  name="listeCompetiteurs"
-	 */
 	public void setListeCompetiteurs(LinkedList<Competiteur> listeCompetiteurs) {
 		competiteurs = listeCompetiteurs;
 	}
@@ -62,11 +46,6 @@ public class Competition {
       this.paris.add(pari);
    }
 
-	/**
-	 * Getter of the property <tt>listeCompetiteurs</tt>
-	 * @return   Returns the competiteurs.
-	 * @uml.property   name="listeCompetiteurs"
-	 */
 	public LinkedList<Competiteur> getListeCompetiteurs() {
 		return competiteurs;
 	}
