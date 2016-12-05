@@ -14,15 +14,33 @@ public class Competition {
    protected LinkedList<Pari> paris;
 	
 	
-	public Competition(String nomCompetition, DateFrancaise dateCloture) throws CompetitionException{
+	public Competition(String nomCompetition, DateFrancaise dateCloture, String[] stringCompetiteurs) throws CompetitionException{
    
       if ( nomCompetition == null ) throw new CompetitionException();
       if ( !nomCompetition.matches("[0-9A-Za-z-._]{4,}")) throw new CompetitionException();        
        
-   
+      // Verification que la liste des compétiteurs fournie contient au moins deux compétiteurs 
+      if ( stringCompetiteurs.length <= 1  ) throw new CompetitionException();
+      
+      // Vérification que les dates sont cohérentes   
+      if ( dateCloture == null   ) throw new CompetitionException();  
+      if ( dateCloture.estDansLePasse()   ) throw new CompetitionException();
+      
+      // Vérification qu'un compétiteur n'est pas présent deux fois dans la liste fournie (ne se bat pas contre lui-même)
+      for (int i=0;i<stringCompetiteurs.length;i++){
+         for (int j=0;j<stringCompetiteurs.length;j++){
+            if ( (stringCompetiteurs[i]== stringCompetiteurs[j]) &&  (i!=j) )
+               throw new CompetitionException();
+         }
+      }
+
+		this.competiteurs = new LinkedList<Competiteur>();      
+      for (String s: stringCompetiteurs) {
+         this.competiteurs.add( new Competiteur(s) );
+         }
+         
 		this.nomCompetition = nomCompetition;
 		this.dateCloture = dateCloture;
-		this.competiteurs = new LinkedList<Competiteur>();
       this.paris = new LinkedList<Pari>();
 	}
    

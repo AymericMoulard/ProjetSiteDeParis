@@ -3,7 +3,7 @@ package siteParis;
 
 import java.util.LinkedList;
 import java.util.Collection;
-
+import java.util.Random;
 
 /**
  * 
@@ -46,8 +46,8 @@ public class SiteDeParisMetier {
    //* Attributs */
    private LinkedList<Joueur> joueurs;
    private LinkedList<Competition> competitions;
+   private LinkedList<Competiteur> competiteurs;
    private String passwordGestionnaire;
-
 
    public SiteDeParisMetier(String passwordGestionnaire) throws MetierException {
       
@@ -55,16 +55,15 @@ public class SiteDeParisMetier {
       
       this.joueurs = new LinkedList<Joueur>();
       this.competitions = new LinkedList<Competition>();
+      this.competiteurs = new LinkedList<Competiteur>();
       this.passwordGestionnaire = passwordGestionnaire;
-   
-   }
+      }
 
 
 
 
 
 	// Les mÃ©thodes du gestionnaire (avec mot de passe gestionnaire)
-
 
 
 	/**
@@ -169,40 +168,13 @@ public class SiteDeParisMetier {
       
       validitePasswordGestionnaire(passwordGestionnaire);
       veracitePasswordGestionnaire(passwordGestionnaire);
-      // La verification que le nom de la compétition est recevable s'effectue dans la classe Competition
+
+      existenceCompetition(nomCompetition);
       
-      // Verification que la compétition n'est pas déja enregistrée
-      if (this.competitions.size() > 0){
-         for (Competition c:competitions){
-            if ( c.getNomCompetition().equals(nomCompetition) )
-               throw new CompetitionExistanteException();
-         }
-      }
-      // Verification que la liste des compétiteurs fournie contient au moins deux compétiteurs 
+      // Verification qu'il y a bien des competiteurs à inscrire
       if ( stringCompetiteurs == null ) throw new MetierException();
-      if ( stringCompetiteurs.length <= 1  ) throw new CompetitionException();
-      
-      // Vérification qu'un compétiteur n'est pas présent deux fois dans la liste fournie (ne se bat pas contre lui-même)
-      for (int i=0;i<stringCompetiteurs.length;i++){
-         for (int j=0;j<stringCompetiteurs.length;j++){
-            if ( (stringCompetiteurs[i]== stringCompetiteurs[j]) &&  (i!=j) )
-               throw new CompetitionException();
-         }
-      }
-      
-      // Vérification que les dates sont cohérentes   
-      if ( dateCloture == null   ) throw new CompetitionException();  
-      if ( dateCloture.estDansLePasse()   ) throw new CompetitionException();  
-      
-      
-      LinkedList<Competiteur> competiteurs = new LinkedList<Competiteur>();
-      for (String s: stringCompetiteurs)
-         competiteurs.add( new Competiteur(s) );
-         
-          
-      Competition competition = new Competition(nomCompetition,dateCloture);
-      competition.setListeCompetiteurs(competiteurs);      
-      //Ajout de la compétition créée dans la liste de compétitions du site
+               
+      Competition competition = new Competition(nomCompetition, dateCloture, stringCompetiteurs);
       this.competitions.add(competition);
       
    }
@@ -611,7 +583,14 @@ public class SiteDeParisMetier {
       if (competitionInexistante) {throw new CompetitionInexistanteException(); }
       return null;
    }
-   
+   protected void existenceCompetition(String nomCompetition) throws CompetitionExistanteException {
+         if (this.competitions.size() > 0){
+         for (Competition c:competitions){
+            if ( c.getNomCompetition().equals(nomCompetition) )
+               throw new CompetitionExistanteException();
+            }
+         }
+   }
 
 }
 
