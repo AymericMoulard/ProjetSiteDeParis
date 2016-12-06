@@ -46,6 +46,7 @@ public class SiteDeParisMetier {
    //* Attributs */
    private LinkedList<Joueur> joueurs;
    private LinkedList<Competition> competitions;
+   private LinkedList<Competiteur> competiteurs;
    private String passwordGestionnaire;
 
    public SiteDeParisMetier(String passwordGestionnaire) throws MetierException {
@@ -54,6 +55,7 @@ public class SiteDeParisMetier {
       
       this.joueurs = new LinkedList<Joueur>();
       this.competitions = new LinkedList<Competition>();
+      this.competiteurs = new LinkedList<Competiteur>();
       this.passwordGestionnaire = passwordGestionnaire;
       }
 
